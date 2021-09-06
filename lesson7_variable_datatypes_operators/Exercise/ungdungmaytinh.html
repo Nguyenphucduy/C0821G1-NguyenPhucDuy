@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ung Dung May tinh</title>
+</head>
+<body>
+<form>
+    <h2>Caculator</h2>
+    <br>
+    <input type="text" name="number" id="number1">
+    <input type="text" name="number" id="number2">
+    <br>
+    <input type="button" value="Addition(+)" onclick="phepcong();">
+    <input type="button" value="Subtraction(-)" onclick="pheptru();">
+    <input type="button" value="Multiplication(X)" onclick="phepnhan();">
+    <input type="button" value="Division(/)" onclick="phepchia();">
+</form>
+<p id="ketqua"></p>
+<script>
+    function phepcong(){
+        let A = document.getElementById("number1").value;
+        let B = document.getElementById("number2").value;
+        let a = parseInt(A);
+        let b = parseInt(B);
+        let C = a+b;
+        document.getElementById("ketqua").innerHTML = "Kết quả =" + C;
+    }
+    function pheptru(){
+        let A = document.getElementById("number1").value;
+        let B = document.getElementById("number2").value;
+        let a = parseInt(A);
+        let b = parseInt(B);
+        let D = a-b;
+        document.getElementById("ketqua").innerHTML = "Kết quả =" + D ;
+    }
+    function phepnhan(){
+        let A = document.getElementById("number1").value;
+        let B = document.getElementById("number2").value;
+        let a = parseInt(A);
+        let b = parseInt(B);
+        let E = a*b;
+        document.getElementById("ketqua").innerHTML = "Kết quả =" + E ;
+    }
+    function phepchia(){
+        let A = document.getElementById("number1").value;
+        let B = document.getElementById("number2").value;
+        let a = parseInt(A);
+        let b = parseInt(B);
+        let F = a/b;
+        document.getElementById("ketqua").innerHTML = "Kết quả =" + F ;
+    }
+</script>
+</body>
+</html>

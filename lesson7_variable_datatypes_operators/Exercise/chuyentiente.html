@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>chuyen tien te</title>
+</head>
+<body>
+<form></form>
+    <p>Amount</p>
+    <input type="text" id="amount">
+    <span> From Currency </span>
+    <select id="from">
+        <option value="VND">VND</option>
+        <option value="USD">USD</option>
+    </select>
+    <span> To Currency </span>
+    <select id="to">
+        <option value="VND">VND</option>
+        <option value="USD">USD</option>
+    </select>
+    <button onclick="convert()">transfers</button>
+    <span id="ket qua"> Money is your is :</span>
+</form>
+
+<script>
+    function convert() {
+        let amount = document.getElementById("amount").value;
+        let from = document.getElementById("from").value;
+        let to = document.getElementById("to").value;
+        let result ;
+
+        if ( from === "VND" && to === "USD" ){
+            result = amount / 23000;
+        } else if ( from === "USD" && to === "VND"){
+            result = amount * 23000;
+        } else {
+            result = amount;
+        }
+        document.getElementById("ket qua").innerText =  result;
+    }
+</script>
+</body>
+</html>
