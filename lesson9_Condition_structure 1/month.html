@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="https://www.google.com.vn/?hl=vi" method="get">
+    <input type="text" name= 'month' id="month">
+    <input type="button" value="caculatormonth" onclick="caculatormonth();">
+</form>
+<script>
+function caculatormonth() {
+    let m = document.getElementById("month").value;
+    let M = parseInt(m);
+    switch (M) {
+        case 1:
+        case 3:
+        case 5:
+        case 7:
+        case 8:
+        case 10:
+        case 12:
+            alert('This month has 31 days');
+            break;
+        case 4:
+        case 6:
+        case 9:
+        case 11:
+            alert('This month has 30 days');
+            break;
+        case 2:
+            alert('February has 28 days');
+            break;
+
+    }
+
+}
+</script>
+</body>
+</html>
