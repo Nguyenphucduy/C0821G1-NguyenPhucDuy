@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    alert("lesson 1");
+    let C = parseInt(prompt("input C ="));
+    let F = (C * 9 / 5) + 32;
+    alert(C + " độ C = " + F + " độ F");
+</script>
+<script>
+    alert("lesson 2");
+    let m = parseFloat(prompt("input m ="));
+    let ft = m * 3.2808;
+    alert(ft + " feet ");
+</script>
+<script>
+    alert("lesson 3");
+    let a = parseInt(prompt("input a ="));
+    let s = a * a;
+    alert("area of square is " + s );
+</script>
+<script>
+    alert("lesson 4");
+    let canha = parseInt(prompt("input canh a ="));
+    let canhb = parseInt(prompt("input canh b"));
+    let ss= canha * canhb
+    alert("area of rectangular is " + ss );
+</script>
+<script>
+    alert("lesson 5");
+    let h = parseInt(prompt("input height ="));
+    let canhc = parseInt(prompt("input canh c"));
+    let sss= h * canhc
+    alert("area of triangle is " + sss );
+</script>
+<script>
+    alert("lesson 6");
+    let x = parseInt(prompt("input x ="));
+    let y = parseInt(prompt("input y"));
+    let z = -y/x;
+    alert("z = " + z );
+</script>
+<script>
+    alert("lesson 7");
+    let x1 = parseInt(prompt("input x1 ="));
+    let y1 = parseInt(prompt("input y1"));
+    let z1 = parseInt(prompt("input z1 (z1 khac 0 )" ));
+    let delta = x1**2 - 4*z1*y1 ;
+    if (x1+y1+z1==0) {
+        alert("Phương trình có 2 nghiệm x1 = 1 ; x2 = " + (y1/z1));
+    }   else if (delta<0) {
+        alert("Phương trình vô nghiệm !");
+    }   else if (delta==0) {
+        alert("Phương trình có nghiệm kép x1 = x2 = " + (-x1/(2*z1)));
+    }   else if (delta>0) {
+        alert("Phương trình có 2 nghiệm phân biệt x1 = " + ((-x1+ Math.sqrt(delta))/(2*z1)) + " ; x2 = " + ((-x1- Math.sqrt(delta))/(2*z1)));
+    }
+</script>
+<script>
+    alert("lesson 8");
+    let checkAge = parseInt(prompt("Nhập vào số tuổi :"));
+    if ((0<checkAge) && (checkAge<120)) {
+        alert("True");
+    }   else {
+        alert("False");
+    }
+</script>
+<script>
+    alert("lesson 9");
+    let b1 = parseInt(prompt("input canh tam giac 1 ="));
+    let b2 = parseInt(prompt("input canh tam giac 2 ="));
+    let b3 = parseInt(prompt("input canh tam giac 3 ="));
+    let b12 = b1 + b2;
+    let b23 = b2 + b3;
+    let b13 = b1 + b3;
+    let b123 = b1 + b2 + b3;
+    if ((b12>b3) && (b23>b1) && (b13>b2) && (b123>0)) {
+        alert("this is a triangle");
+    }   else {
+        alert("not a triangle");
+    }
+</script>
+<script>
+    alert("lesson 10");
+    let d1 = parseInt(prompt("Nhập vào số điện tháng trước"));
+    let d2 = parseInt(prompt("Nhập vào số điện tháng này"));
+    let d = d2 - d1;
+    let moneyd= d * 3500;
+    alert("Tổng thiệt hại là "+ moneyd + "VNĐ");
+</script>
+
+<script>
+    alert("lesson 11");
+    let svnd = parseInt(prompt("enter your salary : ( VND)"));
+    let tvnd;
+    if (svnd<10000000) {
+        tvnd = svnd * 5 / 100;
+    }   else if ((svnd<50000000) && (svnd>=10000000)) {
+        tvnd = 500000 + (svnd - 10000000) * 10 / 100;
+    }   else if ((svnd>50000000) && (svnd<100000000)) {
+        tvnd = 500000 + 5000000 + (svnd - 50000000) * 15 / 100;
+    }   else {
+        tvnd = 500000 + 5000000  + (svnd-500000000) * 25 / 100;
+    }
+    alert("Your personal income tax = " + tvnd);
+</script>
+<script>
+    alert("lesson 12");
+    let  moneyy = parseInt(prompt("input money ="));
+    let months = parseInt(prompt("number of months"));
+    let lai;
+    if (months<6) {
+        lai= moneyy + moneyy * 7 / 100;
+    }   else if (months<12) {
+        lai= moneyy + moneyy * 10 / 100;
+    }   else if (months<36) {
+        lai= moneyy + moneyy * 15 / 100;
+    }   else {
+        lai = moneyy + moneyy * 20 / 100;
+    }
+    alert("interest after " + months + " months = " + lai );
+
+</script>
+
+
+
+
+</body>
+</html>

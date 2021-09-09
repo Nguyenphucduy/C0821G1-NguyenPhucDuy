@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<img src="img/black1.jpg" onclick="changeImg(1)" id="a1" width="250 px" height="600 px">
+<img src="img/black2.jpg" onclick="changeImg(2)" id="a2" width="250 px" height="600 px">
+<img src="img/black3.jpg" onclick="changeImg(3)" id="a3" width="250 px" height="600 px">
+<img src="img/black4.jpg" onclick="changeImg(4)" id="a4" width="250 px" height="600 px">
+<img src="img/black5.jpg" onclick="changeImg(5)" id="a5" width="250 px" height="600 px">
+</body>
+<script>
+    function changeImg(num) {
+        let img1 = document.getElementById('a1').getAttribute('src');
+        let img2 = document.getElementById('a2').getAttribute('src');
+        let img3 = document.getElementById('a3').getAttribute('src');
+        let img4 = document.getElementById('a4').getAttribute('src');
+        let img5 = document.getElementById('a5').getAttribute('src');
+        switch (num) {
+            case 1 : {
+                if (img1 === 'img/black1.jpg') {
+                    document.getElementById('a1').src = 'img/blue1.jpg'
+                } else if (img1 === 'img/blue1.jpg') {
+                    document.getElementById('a1').src = '/img/green1.jpg'
+                } else {
+                    document.getElementById('a1').src = 'img/black1.jpg'
+                }
+            }
+                ;
+                break;
+            case 2 : {
+                if (img2 === 'img/black2.jpg') {
+                    document.getElementById('a2').src = 'img/blue2.jpg'
+                } else if (img2 === 'img/blue2.jpg') {
+                    document.getElementById('a2').src = 'img/green2.jpg'
+                } else {
+                    document.getElementById('a2').src = 'img/black2.jpg'
+                }
+            }
+                ;
+                break;
+            case 3 : {
+                if (img3 === 'img/black3.jpg') {
+                    document.getElementById('a3').src = 'img/blue3.jpg'
+                } else if (img3 === 'img/blue3.jpg') {
+                    document.getElementById('a3').src = 'img/green3.ipg'
+                } else {
+                    document.getElementById('a3').src = 'img/black3.jpg'
+                }
+            }
+                ;
+                break;
+            case 4 : {
+                if (img4 === 'img/black4.jpg') {
+                    document.getElementById('a4').src = 'img/blue4.jpg'
+                } else if (img4 === 'img/blue4.jpg') {
+                    document.getElementById('a4').src = 'img/green4.ipg'
+                } else {
+                    document.getElementById('a4').src = 'img/black4.jpg'
+                }
+            }
+                ;
+                break;
+            case 5 : {
+                if (img5 === 'img/black5.jpg') {
+                    document.getElementById('a5').src = 'img/blue5.jpg'
+                } else if (img5 === 'img/blue5.jpg') {
+                    document.getElementById('a5').src = 'img/green5.ipg'
+                } else {
+                    document.getElementById('a5').src = 'img/black5.jpg'
+                }
+            }
+                ;
+                break;
+
+        }
+
+        if (document.getElementById('a1').getAttribute('src') === 'img/black1.jpg'
+            && document.getElementById('a2').getAttribute('src') === 'img/black2.jpg'
+            && document.getElementById('a3').getAttribute('src') === 'img/black3.jpg'
+            && document.getElementById('a4').getAttribute('src') === 'img/black4.jpg'
+            && document.getElementById('a5').getAttribute('src') === 'img/black5.jpg') {
+            alert('You win with black')
+        }
+        if (document.getElementById('a1').getAttribute('src') === 'img/blue1.jpg'
+            && document.getElementById('a2').getAttribute('src') === 'img/blue2.jpg'
+            && document.getElementById('a3').getAttribute('src') === 'img/blue3.jpg'
+            && document.getElementById('a4').getAttribute('src') === 'img/blue4.jpg'
+            && document.getElementById('a5').getAttribute('src') === 'img/blue5.jpg') {
+            alert('You win with blue')
+        }
+        if (document.getElementById('a1').getAttribute('src') === 'img/green1.jpg'
+            && document.getElementById('a2').getAttribute('src') === 'img/green2.jpg'
+            && document.getElementById('a3').getAttribute('src') === 'img/green3.jpg'
+            && document.getElementById('a4').getAttribute('src') === 'img/green4.jpg'
+            && document.getElementById('a5').getAttribute('src') === 'img/green5.jpg') {
+            alert('You win with green')
+        }
+    }
+
+
+</script>
+</html>
