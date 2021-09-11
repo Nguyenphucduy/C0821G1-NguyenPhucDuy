@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button onclick="play()">Play</button>
+<script>
+    function play()
+    {
+        let a = parseInt(prompt('enter the number first :'));
+        let b = parseInt(prompt('enter the number second:'));
+        let c =  Math.floor(Math.random() * (a-b || b-a));
+
+        for(let i = 1 ;i <= 3; i++) {
+            let d= parseInt(prompt('Enter the number you want to guess'));
+            if( d === c ) {
+                alert('You Win');
+                break;
+            } else if( d > c) {
+                alert('Your number is bigger than mine');
+            } else {
+                alert('Your number is smaller than mine');
+            }
+        }
+
+    }
+</script>
+
+</body>
+</html>

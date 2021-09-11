@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let i=1;
+    let total = 0;
+    let j = 0;
+    let divisible;
+    while (i>0){
+        divisible = i%7;
+        if(divisible === 0 ) {
+            total = total + i;
+            j = j + 1;
+            if ( j === 30 ) {
+                break;
+            }
+        }
+        i++;
+    }
+    alert('The sum of the first 30 numbers divisible by 7 is : ' + total );
+</script>
+</body>
+</html>
