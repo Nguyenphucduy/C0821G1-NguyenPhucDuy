@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let month = parseInt(prompt('input month'));
+    let money = parseInt(prompt('input money'));
+    let interest = parseFloat(prompt('input interest'));
+    let lai = interest*money;
+    let result;
+    for (let i=1;i<=month;i++)
+    {
+        lai = money + lai;
+        result= (month*(money+interest))/100;
+    }
+    alert("your debt amount is " + result);
+</script>
+</body>
+</html>

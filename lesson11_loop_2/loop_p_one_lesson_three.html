@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    alert(' lesson 3') ;
+    var d = parseInt(prompt(" Enter the number of iterations of the fibonacci sequence "));
+    var a = 0;
+    var b = 1;
+    for (let i = 1; i <= d ; i++) {
+        var sum = a + b ;
+        a = b;
+        b = sum;
+        document.write( a + '<br>');
+    }
+</script>
+</body>
+</html>
