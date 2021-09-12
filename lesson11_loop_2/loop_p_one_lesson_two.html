@@ -8,12 +8,17 @@
 <script>
     alert('lesson 2');
     let c = parseFloat(prompt('input do C : '));
-    if (c<20) {
+    while (c<20) {
         alert('input so lon hon 20');
-    }else if (c>100){
+        break;
+    }
+    while (c>100){
         alert('input so nho hon 100');
-    }else {
+        break;
+    }
+    while (c>20 && c<100){
         alert('nhiet do hom nay la :' + c + 'C');
+        break;
     }
 </script>
 </body>

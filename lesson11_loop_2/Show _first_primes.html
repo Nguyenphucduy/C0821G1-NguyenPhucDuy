@@ -6,30 +6,21 @@
 </head>
 <body>
 <script>
-let number = parseInt(prompt("Nhập số cần kiểm tra: "));
-// Biến check để kiểm tra có phải là số nguyên tố hay không
-let check = true;
-if (number < 2){
-    alert("Không phải số nguyên tố");
-} else {
-    //Sử dụng vòng lặp để xét, nếu number chia hết cho số nào từ 2 tới number - 1 thì không phải là số nguyên tố.
-    for (let i = 2; i < number; i++ ){
-        if (number % i === 0){
-            check = false;
-            break;
+    let number = parseInt(prompt('input number'));
+    let count = 0;
+    for (let n = 2; count < number; n++) {
+        let check = true;
+        for (let i = 2; i < n; i++) {
+            if (n % i === 0) {
+                check = false;
+                break;
+            }
+        }
+        if (check === true) {
+            count = count + 1;
+            document.write(n + "<br>");
         }
     }
-}
-
-// Kiểm tra check là true hay false
-if (check === true){
-    alert("Là số nguyên tố");
-} else {
-    alert("Không phải số nguyên tố");
-}
-
-// Random số từ 0 - 9
-// let a = Math.floor(Math.random() * 9);
 </script>
 </body>
 </html>
