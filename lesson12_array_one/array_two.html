@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset=utf-8 />
+    <title>JS Bin</title>
+    <style>
+        body {padding-top:50px}
+    </style>
+</head>
+
+<body>
+<script>
+    let x = [-3, 5, 1, 3, 2, 10];
+    let first = 0;
+    let last = x.length - 1;
+    while (first < last) {
+        let b = x[first]; // Use b để đổi chỗ 2 phần tử đầu và cuối dựa vào đk
+        x[first] = x[last];
+        x[last] = b;  ////first < last,trong quá trình lặp đổi chỗ phần tử đầu tiên và cuối cùng cho nhau.
+        first++;//first lên 1 , giảm last đi 1 -->để duyệt phần tử tiếp theo
+        last--;
+
+    }
+    document.write(x);
+</script>
+<!--<script>-->
+<!--    let x = [-3, 5, 1, 3, 2, 10];-->
+<!--    let first = 0;-->
+<!--    let last = x.length - 1;-->
+<!--    while (first > last) {-->
+<!--        let b = x[first]; // Use b để đổi chỗ 2 phần tử đầu và cuối dựa vào đk-->
+<!--        x[first] = x[last];-->
+<!--        x[last] = b;  ////first < last,trong quá trình lặp đổi chỗ phần tử đầu tiên và cuối cùng cho nhau.-->
+<!--        first&#45;&#45;;//first lên 1 , giảm last đi 1 &ndash;&gt;để duyệt phần tử tiếp theo-->
+<!--        last++;-->
+
+<!--    }-->
+<!--    document.write(x);-->
+<!--    </script>-->
+</body>
+
+</html>

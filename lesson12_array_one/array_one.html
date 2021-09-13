@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset=utf-8 />
+    <title>JS Bin</title>
+    <style>
+        body {padding-top:200px}
+    </style>
+</head>
+
+<body>
+<input type="text" id="Value"/>
+<input type="button" id="Add" value="Add" onclick="add_element_to_array();"/>
+<input type="button" id="Display" value="Display" onclick="display_array();"/>
+<div id="result"></div>
+<script>
+    let x = 0; //index
+    let array = Array();
+    function add_element_to_array() {
+        array[x] = document.getElementById("Value").value;// lấy value input text và gán cho x=index
+        alert("Element: " + array[x] + " Added at index " + x);
+        x++;// x tăng
+        document.getElementById("Value ").value = "";// gánh text = rỗng
+    }
+    function display_array() {
+        let e = "<hr/>"; // kẻ ngang phân cách items
+        for (let i = 0; i < array.length; i++) { // duyệt các items
+            e += "Element " + i + " = " + array[i] + "<br/>"; //mỗi lần duyệt cộng dồn item = e
+        }
+        document.getElementById("result").innerHTML = e;// hiển thị e
+    }
+</script>
+</body>
+
+</html>
