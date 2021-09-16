@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let string1 = prompt("input string 1 : ");
+    let string2 = prompt("input string 2 : ");
+    let array1 = [];
+    let array2 = [];
+    array1 = string1.split(" ");
+    array2 = string2.split(" ");
+    let check ;
+    for (let i =0;i<=array1.length; i++ ){
+        for (let j = 0; j <= array2.length; j ++){
+            if ((array1.length=== array2.length) && (array1[i]===array2[j])){
+                check = true;
+            }
+        }
+    }
+    if (check===true){
+        alert("2 identical strings");
+    }else{
+        alert(" 2 different chains");
+    }
+</script>
+</body>
+</html>

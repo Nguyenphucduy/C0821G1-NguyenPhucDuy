@@ -9,17 +9,20 @@
     let arr1 = ['hello','good','bad'];
     let arr2 = ['chao','tot','xau'];
     let letter = prompt("Enter the word to be translated");
+    let check = false ;
     for (let i=0; i< arr1.length; i++) {
         for (let j =0 ; j < arr2.length; j++){
             if ((letter===arr1[i]) && (i===j)) {
+                check = true;
                 alert(arr2[j]);
-
+                break;
             }
+
         }
     }
-
-
-
+    if (check===false){
+        alert("i can't find it");
+    }
 </script>
 </body>
 </html>
