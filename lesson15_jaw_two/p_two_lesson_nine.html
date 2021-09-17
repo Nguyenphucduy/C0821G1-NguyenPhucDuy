@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let array = [];
+    let count = 0 ;
+    let check;
+    function checkarray(array) {
+        for (let i = 1; i <= 10; i++) {
+            let value = prompt('enter integer elements ' + i);
+            array[i] = value;
+        }
+        let a = prompt('input a: ');
+        for (let i = 1; i <= 10; i++) {
+            if (a === array[i]) {
+                count = count + 1;
+                check = true;
+            }
+        }
+        if (check) {
+            document.write(count);
+        }else {
+            alert('-1');
+        }
+
+    }
+    checkarray(array);
+
+</script>
+</body>
+</html>

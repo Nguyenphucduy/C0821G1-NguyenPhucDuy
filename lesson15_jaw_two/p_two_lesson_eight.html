@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let array = [];
+    function changearray(array) {
+        for(let i=1;i<=10;i++) {
+            let value = parseInt(prompt('enter integer elements ' + i));
+            array[i] = value;
+        }
+        array.reverse();
+        return array;
+    }
+    let x = changearray(array);
+    document.write(x);
+
+</script>
+</body>
+</html>

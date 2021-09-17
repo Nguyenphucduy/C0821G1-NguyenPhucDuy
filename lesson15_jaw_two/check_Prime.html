@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // let check = true;
+    // let number = parseInt(prompt('enter the number you want check prime'));
+    function isPrime(number){
+        if (number===1){
+            return false;
+        }
+        for (let i = 2 ; i < number ; i++ ){
+            if (number%i===0){ // chia het cho i (so khac)
+                // check = false;
+                return false;
+            }
+        }
+        return true;
+        // if (check===true){
+        //     alert('number is prime');
+        // }else if (check===false) {
+        //     alert(' number is not prime');
+        // }
+    }
+    // let number = isPrime(89);
+    // document.write(number);
+    for (let number = 2 ; number < 10000; number ++){
+        if(isPrime(number)){
+            document.write(number + ' ');
+        }
+    }
+</script>
+</body>
+</html>

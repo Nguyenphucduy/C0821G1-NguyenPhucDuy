@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function min(a,b,c) {
+        if ((a<b) && (a<c)) {
+            minn = a;
+        }else if ((b<c) && (b < a)) {
+            minn= b;
+        }else{
+            minn =c ;
+        }
+        return minn;
+    }
+    let minabc = min(prompt('input a :'),prompt(' input b :'), prompt('input c'));
+    alert(minabc);
+</script>
+</body>
+</html>

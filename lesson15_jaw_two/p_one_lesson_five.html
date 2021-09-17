@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let star = ['Polaris', 'Aldebaran', 'Deneb', 'Vega', 'Altair', 'Dubhe', 'Regulus'];
+    let constellation = [ 'Ursa Minor', 'Tarurus', 'Cygnus', 'Lyra', 'Aquila', 'Ursa Major', 'Leo'] ;
+    let letter = prompt("Enter the star to seach");
+    let check ;
+    function seach(a) {
+        for (let i =0 ; i < star.length; i++){
+            for (let j =0; j <constellation.length; j++){
+                if ((letter===star[i]) && (i===j)) {
+                    check = true;
+                    return constellation[j];
+
+                }
+            }
+        }
+        return false;
+    }
+    alert(seach());
+</script>
+</body>
+</html>
