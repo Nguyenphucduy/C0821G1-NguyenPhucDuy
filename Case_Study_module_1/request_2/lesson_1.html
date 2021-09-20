@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let money = parseFloat(prompt("enter your salary"));
+    let result;
+    if (money > 15000) {
+        result =money- ((money/100)*20);
+    }else if (money >7000){
+        result = money - ((money/100)*10);
+    }else if (money<7000) {
+        result = money - ((money/100)*5);
+    }
+    alert('your net salary is ' + result);
+</script>
+</body>
+</html>

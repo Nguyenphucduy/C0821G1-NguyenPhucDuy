@@ -1,0 +1,22 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let sout;
+    sout = "<table border='1px' width='500' cellspacing='5' cellpadding='10'>"
+    for (let i = 1; i <= 10; i++) {
+        sout = sout + "<tr>";
+        for (let j = 1; j <= 10; j++) {
+            sout = sout + "<td>" + i * j + "</td>";
+        }
+        sout = sout + "</tr>";
+    }
+    sout = sout + "</table>";
+    document.write(sout);
+</script>
+</body>
+</html>
