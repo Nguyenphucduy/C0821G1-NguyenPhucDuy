@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--Phát triển một ứng dụng đơn giản với các hình tròn với nhiều hiệu ứng khác nhau.
+
+Ứng dụng này được phát triển theo từng cấp độ (tương ứng với từng bước) đi từ dễ đến khó.-->
+</head>
+<body>
+<!--Bước 1: Tạo một trang HTML với thẻ canvas.-->
+<canvas id="myCanvas" width="1368px" height="768px" style="border:1px solid #d3d3d3;">
+<script>
+    //Bước 2: Vẽ một hình tròn đơn giản với kích thước cố định
+    function Circle(x, y, radius){
+        this.x = x;
+        this.y = y;
+        this.radius = radius;
+    }
+    // function createCircle(){
+    //     var ctx = document.getElementById("myCanvas").getContext("2d");
+    //     var circle= new Circle(500, 500, 80);
+    //     ctx.beginPath();
+    //     ctx.arc(circle.x, circle.y, circle.radius, 0, 2 * Math.PI);
+    //     ctx.fill();
+    // }
+    //Bước 4: Vẽ hình tròn với màu ngẫu nhiên
+
+    function getRandomHex(){
+        return Math.floor(Math.random()*255); //  số ngẫu nhiên nằm trong khoảng 0-255.
+    }
+    function getRandomColor(){
+        var red = getRandomHex();
+        var green = getRandomHex();
+        var blue = getRandomHex();
+        return "rgb(" + red + "," + blue + "," + green +")";  //Hàm getRandomColor() sinh ra một màu ngẫu nhiên
+    }
+
+    function createCircle(){
+        var ctx = document.getElementById("myCanvas").getContext("2d");
+        var radius = Math.floor(Math.random() * 80);//b3: tạo bán kinh ngẫn nhiên
+        var color = getRandomColor();
+        var x = Math.random() * window.innerWidth;// b5: index ngẫu nhiên
+        var y = Math.random() * window.innerHeight;
+        var circle= new Circle(x, y, radius);
+        ctx.beginPath();
+        ctx.arc(circle.x, circle.y, circle.radius, 0, 2 * Math.PI);
+        ctx.fillStyle = color;
+        ctx.fill();
+    }
+    //b6 tạo 2 hình tròn gọi hàm 2 lần
+    function createMultipleCircle() { //B7 : xài vòng lặp
+        for (var i = 0; i < 30; i++) {
+            createCircle();
+        }
+    }
+    createMultipleCircle();
+
+</script>
+
+</body>
+</html>
