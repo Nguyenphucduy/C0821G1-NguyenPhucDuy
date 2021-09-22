@@ -23,21 +23,24 @@ Hiển thị ra màn hình nhiệt độ F và độ Kenvin tương ứng.-->
 <script>
     class Temperature {
         constructor(c) {
-            this.c = c;
+            if (c <= -273){
+                this.c=-273;
+            }else {
+                this.c=c
+            }
+
         }
-        getConvert (){
-            let f = (this.c*9/5) + 32;
-            return f;
+        conVert (){
+            return (this.c*9/5) + 32;
         }
-        getKelvin(){
-            let k = this.c + 273.15;
-            return k;
+        kelVin(){
+            return this.c + 273.15;
         }
 
     }
-    let Temperature2 = new Temperature(25);
-    console.log(Temperature2.getConvert());
-    console.log(Temperature2.getKelvin());
+    let Temperature2 = new Temperature(parseInt(prompt('input do c :')));
+    console.log(Temperature2.conVert());
+    console.log(Temperature2.kelVin());
 
 
 </script>

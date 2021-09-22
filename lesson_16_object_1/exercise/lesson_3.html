@@ -9,12 +9,12 @@ Có một thông số về trạng thái pin tính bằng đơn vị số nguyê
 Có một vùng nhớ dùng để lưu tin nhắn đang soạn thảo.
 Có một vùng nhớ dùng để lưu tin nhắn trong hộp thư đến.
 Có một vùng nhớ dùng để lưu tin nhắn đã gửi.
-Có chức năng kiểm tra trạng thái điện thoại bật hay tắt.
-Có chức năng bật và tắt điện thoại.
-Có chức năng xạc pin điện thoại.
+Có chức năng kiểm tra trạng thái điện thoại bật hay tắt.//ok
+Có chức năng bật và tắt điện thoại.//ok
+Có chức năng xạc pin điện thoại.// ok
 Có chức năng soạn tin nhắn.
-Có chức năng nhận tin nhắn từ một chiếc mobile khác.
-Có chức năng gửi tin nhắn tới một chiếc mobile khác.
+Có chức năng nhận tin nhắn từ một chiếc mobile khác./ok
+Có chức năng gửi tin nhắn tới một chiếc mobile khác./ok
 Có chức năng xem tin trong hộp thư đến.
 Có chức năng xem tin đã gửi.
 Sau mỗi lần sử dụng một chức năng, năng lượng pin sẽ giảm đi một đơn vị.
@@ -27,26 +27,64 @@ Chiếc điện thoại nokia soạn tin nhắn với nội dung bất kỳ và 
 <body>
 <script>
     class Mobile {
-        constructor(pin,smn,smb,sms) {
-            this.pin = pin;
-            this.smn = smn;
-            this.smb = smb;
-            this.sms = sms;
+        constructor() {
+            this.pin = 100;
+            this.sent = [];
+            this.box = [];
+            this.status = true;
         }
-        getcheck () {
-            var on;
-            var off;
 
-            if (this.pin<= 0) {
-                return off;
-            }else {
-                return on;
+        getStatus() {
+            return this.status;
+        }
+
+        setStatus() {
+// this.status = !this.status;
+            if (this.status) {
+                let check = confirm("Do you want to turn off your phone?");
+                if (check) {
+                    alert("it's off");
+                    this.status = false;
+                }
+            } else {
+                alert("it's on");
+                this.status = true;
             }
         }
 
+        sendMessage(sent, iphone) {
+            this.sent.push(sent);
+            iphone.receiveMessage(sent);
+            this.pin--;
+        }
+        receiveMessage(box) {
+            this.box.push(box);
+            this.pin--;
+        }
+
+        checkPin(){
+            if (this.pin === 0){
+                alert("charge the battery");
+            }
+
+        }
+
+    // class phoneGap extends Mobile {
+    // }
+
     }
-    let mobile1 = new Mobile(0,0,0,0);
-    console.log(mobile1.getcheck());
+
+    let iphone = new Mobile();
+    let nokia = new Mobile();
+    iphone.checkPin();
+    iphone.setStatus();
+    iphone.getStatus();
+
+    nokia.sendMessage("hello there", iphone);
+
+    console.log("message sent : " + nokia.sent);
+    console.log("message received: " + iphone.box);
+    // console.log("Tin Đã nhận: " + iphone.pin);
 </script>
 
 </body>
