@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--Viết một ứng dụng nhỏ mô phỏng câu chuyện Adam và Eva.
+     Adam và Eva là những con người đầu tiên, trong vườn địa đàng có một cây táo ra những quả táo chín mọng.
+     Adam và Eva lấy một quả táo và ăn, mỗi người ăn một miếng táo cho đến khi hết!
+
+
+
+Viết một lớp lấy tên là Apple, với mỗi quả táo đều có những đặc điểm sau đây:
+
++ Có khối lượng.
+
++ Khi tạo ra quả táo đã có khối lượng mặc định là 10 đv.//ok
+
++ Các đối tượng khác có thể biết được khối lượng của quả táo, nhưng không thay đổi được giá trị này.
+
+
+
+Viết một lớp có tên là Human, với mỗi một người được tạo ra sẽ mang đầy đủ những đặc tính sau:
+
++ Có tên.//ok
+
++ Có giới tính.//ok
+
++ Có cân nặng.//ok
+
++ Biết nói một chuỗi các từ. (bằng cách in ra màn hình console chuỗi đó)// ok
+
++ Biết ăn táo. Mỗi lần ăn, chỉ ăn một miếng táo (1đv).
+Khi ăn táo, khối lượng của người đó sẽ tăng lên một đv và khối lượng quả táo sẽ giảm đi một đv./ok
+Chỉ ăn táo khi khối lượng của quả táo lớn hơn 0.
+
++ Biết kiểm tra khối lượng của quả táo./ok
+
++ Các đối tượng khác có thể biết được tên, giới tính và cân nặng của đối tượng người.-->
+</head>
+<body>
+<script>
+    class Apple {
+        constructor(weight) {
+            this.weight = 10;
+        }
+
+        getWeight() {
+            return this._weight;
+        }
+
+        setWeight(value) {
+            this._weight = value;
+        }
+        checkMapple(){
+            console.log(' The mass of the apple is: ' + this.weight);
+        }
+        // decreaseWeight(){
+        //     this.weight--;
+        // }
+    }
+    class Human {
+        constructor(name,gender,weight,) {
+            this._weight = weight;
+            this._name = name;
+            this._gender = gender;
+        }
+        getInformation (){
+            return ' name :' + this._name + ' weight :'+  this._weight + ' gender :'+ this._gender;
+        }
+        setInformation(value1,value2,value3){
+            this._name = value1;
+            this._weight = value2;
+            this._gender = value3;
+        }
+        talKing(){
+            console.log('hello eva');
+        }
+        eatApple(){
+            if (apple1.weight>0) {
+                this._weight++;
+                console.log(' weight of : ' + this._name + ' now is ' + this._weight + 'kg');
+            }
+        }
+        checkWeightapple (){
+            apple1.checkMapple();
+        }
+
+    }
+    let adam = new Human('adam','male','60kg');
+    let eva = new Human('eva','female','50kg');
+    let apple1 = new Apple() ;
+    console.log(adam.getInformation());
+    console.log(eva.getInformation());
+    adam.setInformation('adam2',65,'male');
+    console.log(adam.getInformation());
+    adam.talKing();
+    adam.eatApple();
+    adam.checkWeightapple();
+
+</script>
+</body>
+</html>

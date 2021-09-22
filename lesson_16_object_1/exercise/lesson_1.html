@@ -26,7 +26,7 @@ Thay đổi chiều dài và chiều rộng của hình chữ nhật.
 In ra màn hình diện tích và chu vi của hình chữ nhật đó.-->
 </head>
 <body>
-<canvas id="myCanvas" width="400" height="500" style="border:1px solid black;">
+<canvas id="myCanvas" width="800" height="500" style="border:1px solid black;">
 <script>
     class Rectangle {
         constructor(height,width) {
@@ -62,14 +62,14 @@ In ra màn hình diện tích và chu vi của hình chữ nhật đó.-->
             let canvas = document.getElementById("myCanvas");
             let ctx = canvas.getContext('2d');
             ctx.fillStyle = '#FF0000';
-            ctx.fillRect(25, 25, width, height);
+            ctx.fillRect(25, 25,this._width,this._height);
         }
     }
     let rectangular = new Rectangle(150,70);
     console.log(rectangular.getWidth());
     console.log(rectangular.getHeight());
-    rectangular.setWidth(50);
-    rectangular.setHeight(20);
+    rectangular.setWidth(700);
+    rectangular.setHeight(400);
     console.log(rectangular.aRea());
     console.log(rectangular.periMeter());
     rectangular.show();

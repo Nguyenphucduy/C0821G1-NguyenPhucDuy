@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!-- Thay thế ảnh nhân vật bằng một ảnh khác/ok
+Thêm thuộc tính speed (tốc độ) cho đối tượng Hero (tốc độ hiện tại đang được để cố định là 20)
+Viết thêm các hàm để nhân vật có thể di chuyển xung quanh màn hình -->
+</head>
+<body>
+<div id="game"></div>
+<script>
+
+    /**
+     * Created by nhatnk on 4/26/17.
+     */
+
+    function Hero(image, top, left, size){
+        this.image = image;
+        this.top = top;
+        this.left = left;
+        this.size = size;
+
+        this.getHeroElement = function(){
+            return '<img width="'+ this.size + '"' +
+                ' height="'+ this.size + '"' +
+                ' src="' + this.image +'"' +
+                ' style="top: '+this.top+'px; left:'+this.left+'px;position:absolute;" />';
+        }
+
+        this.moveRight = function(){
+            this.left += 100;
+            console.log('count : ' + this.left);
+        }
+
+    }
+
+    var hero = new Hero('https://content.active.com/Assets/Active.com+Content+Site+Digital+Assets/Article+Image+Update/Running/How+Far/Carousel.jpg', 20, 30, 200);
+
+    function start(){
+        if(hero.left < window.innerWidth - hero.size){
+            hero.moveRight();
+        }
+        document.getElementById('game').innerHTML = hero.getHeroElement();
+        setTimeout(start, 500)
+    }
+
+    start();
+</script>
+</body>
+</html>
