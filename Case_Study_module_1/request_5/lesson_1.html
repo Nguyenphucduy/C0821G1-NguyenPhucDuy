@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--Viết hàm tính tổng các số chẵn trong ma trận có kích thước m*n. Với m, n là các số nhập từ bàn phím.-->
+</head>
+<body>
+<script>
+function sum() {
+    let sum1 = 0;
+    let sum2 = 0;
+    let m = parseInt(prompt('input length array m'));
+    for (let i = 0; i < m; i++) {
+        let array1 = parseInt(prompt('input item ' + i));
+        sum2 = sum2 + array1[i];
+    }
+    let n = parseInt(prompt('input length array n'));
+    for (let j = 0; j < n; j++) {
+        let array2 = parseInt(prompt('input item ' + j));
+        sum1 = sum1 + array2[j];
+    }
+    let total = sum1 + sum2;
+    return parseInt(total);
+}
+    console.log(sum());
+</script>
+</body>
+</html>
