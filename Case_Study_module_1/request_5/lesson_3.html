@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--Bài 3: Viết hàm tìm giá trị lớn nhất, nhỏ nhất trong mảng 2 chiều-->
+</head>
+<body>
+<script>
+    let rowarr = parseInt(prompt('input row '));
+    let colarr = parseInt(prompt('input col'));
+    function caculatorMinmax() {
+        let max = 0;
+        let min = 0;
+        let arr2d = new Array(rowarr);
+        for (let row = 0; row < arr2d.length; row++) {
+            arr2d[row] = new Array(colarr);
+            for (let col = 0; col < arr2d[row].length; col++) {
+                let value = parseInt(prompt('input at [' + row + '] [' + col + '] : '));
+                arr2d[row][col] = value;
+                if (arr2d[row][col]>max){
+                    max = arr2d[row][col];
+                }
+                if (arr2d[row][col]<min){
+                    min = arr2d[row][col];
+                }
+            }
+        }
+        console.log('min is ' + min + '\n' +'max is ' + max);
+    }
+    caculatorMinmax();
+</script>
+</body>
+</html>

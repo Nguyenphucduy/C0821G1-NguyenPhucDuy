@@ -3,19 +3,79 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <!-- Bài 5: Giả sử menu của chúng ta có các loại thức uống như sau:
+Cafe
+Cam vắt
+Nước ép cà rốt
+Nước ép cà chua
+Nước lọc
+Nước dừa
+Viết một chương trình gọi thức uống đơn giản.
+Gợi ý: Trước tiên in ra màn hinh danh sách các loại thức uống cho người dùng chọn lựa
+Đánh dấu theo thứ tự
+1 (cafe), 2 (cam vắt), 3(nước ép cà rốt), 4(nước ép cà chua), 5(nước lọc), 6(nước dừa), 7(thoát gọi món)
+Khi người dùng lựa chọn 1 trong số các thức uống,
+ chương trình sẽ hiện đơn giá của thức uống đó và cho phép người dùng nhập số lượng.
+Cuối cùng hiển thị tổng số tiền người dùng cần phải trả.
+Sử dụng vòng lặp do while lặp lại cho người dùng đặt thức uống, kết thúc quá trình đặt thức uống khi người nhấn số 7-->
 </head>
 <body>
-<!-- let choose = parseInt(prompt("Danh sách thức uống: " + "\n" +
+<script>
+    let choose = parseInt(prompt("water list: " + "\n" +
         "1. Cafe " + "\n" +
-        "2. Nước Cam" + "\n"));
+        "2. Orange juice" + "\n" +
+    "3. carrot juice" + "\n" +
+        "4. tomato juice" + "\n" +
+        '5.water' + "\n" +
+    '6.coconut water' + "\n" +
+    '7.OUT'));
 
     switch (choose) {
         case 1: {
-            let amount = prompt("Giá của Cafe là 10k" + "\n" +
-                " Nhập số lượng muốn mua: ");
-            alert("Tổng tiền cần thanh toán: " + amount*10000);
+            let amount1 = prompt(" the price of coffee is 10k" + "\n" +
+                " Enter the quantity you want to buy : ");
+            alert("Total amount to pay: " + amount1 * 10000 + 'VNĐ');
+            break;
         }
-    }-->
-
+        case 2: {
+            let amount2 = prompt(" the price of Orange juice is 10k" + "\n" +
+                " Enter the quantity you want to buy : ");
+            alert("Total amount to pay: " + amount2 * 10000 + 'VNĐ');
+            break;
+        }
+        case 3: {
+            let amount3 = prompt(" the price of Carrot juice is 12k" + "\n" +
+                " Enter the quantity you want to buy : ");
+            alert("Total amount to pay: " + amount3 * 12000 + 'VNĐ');
+            break;
+        }
+        case 4: {
+            let amount4 = prompt(" the price of Tomato juice is 13k" + "\n" +
+                " Enter the quantity you want to buy : ");
+            alert("Total amount to pay: " + amount4 * 13000 + 'VNĐ');
+            break;
+        }
+        case 5: {
+            let amount5 = prompt(" the price of Water is 5k" + "\n" +
+                " Enter the quantity you want to buy : ");
+            alert("Total amount to pay: " + amount5 * 5000 + 'VNĐ');
+            break;
+        }
+        case 6: {
+            let amount6 = prompt(" the price of Coconut water is 20k" + "\n" +
+                " Enter the quantity you want to buy : ");
+            alert("Total amount to pay: " + amount6 * 20000 + 'VNĐ');
+            break;
+        }
+        case 7: {
+            alert('pleasure to serve you');
+            break;
+        }
+        default: {
+            alert('please choose again');
+            break;
+        }
+    }
+</script>
 </body>
 </html>

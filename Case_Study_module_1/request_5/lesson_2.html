@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--Bài 2: Viết hàm liệt kê các số nguyên tố trong mảng 2 chiều, đếm các số nguyên tố có trong mảng đó.-->
+</head>
+<body>
+<script>
+    let rowarr = parseInt(prompt('input row '));
+    let colarr = parseInt(prompt('input col'));
+    function listPrime() {
+        let arr2d = new Array(rowarr);
+        let check = true;
+        let count = 0;
+        for (let row = 0; row < arr2d.length; row++) {
+            arr2d[row] = new Array(colarr);
+            for (let col = 0; col < arr2d[row].length; col++) {
+                let value = parseInt(prompt('input at [' + row + '] [' + col + '] : '));
+                arr2d[row][col] = value;
+                if (arr2d[row][col]%arr2d[row][row]===0){
+                    check = true;
+                }
+            }
+            if (check){
+                count = count + 1;
+            }
+        }
+        return count;
+    }
+    console.log(listPrime());
+</script>
+</body>
+</html>

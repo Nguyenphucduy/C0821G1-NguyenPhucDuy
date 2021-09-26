@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--Bài 1: Viết một hàm chuẩn hóa xâu ký tự:
+     biến đổi xâu ký tự thành xâu sao cho trong xâu không có 2 dấu cách liền nhau và bắt đầu mỗi từ phải in hoa.
+    Ví dụ tRuong    TaN   HAI => Truong Tan Hai.-->
+</head>
+<body>
+<script>
+    let str = prompt('enter your name');
+    let arr = [];
+    function formatString(str) {
+        let result = str.toLowerCase();
+        arr = result.split(' ');
+        for (let i = 0; i< arr.length; i++){
+            if (arr[i]=== ''){
+                arr.splice(i,1);
+                i--;
+            }
+        }
+        for (let j = 0; j < arr.length;j++){
+            arr[j] = arr[j].split('');
+            arr[j][0] = arr[j][0].toUpperCase();
+        }
+
+    }
+    formatString(str);
+    console.log(arr.join(''));
+</script>
+</body>
+</html>
