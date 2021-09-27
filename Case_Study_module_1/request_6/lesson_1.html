@@ -19,6 +19,108 @@ Khi KH không trúng giải nào thì hệ thống hiển thị thông báo “C
 
 </head>
 <body>
+<label for="num1">Number 1</label><input type="text" id="num1"><br>
+<label for="num2">Number 2</label><input type="text" id="num2"><br>
+<label for="num3">Number 3</label><input type="text" id="num3"><br>
+<label for="num4">Number 4</label><input type="text" id="num4"><br>
+<label for="num5">Number 5</label><input type="text" id="num5"><br>
+<label for="num6">Number 6</label><input type="text" id="num6"><br>
+<button onclick="checkResult()">Check result</button>
+<script>
+    let bag = [];
+    let bag2 = [];
 
+    function checkResult() {
+        let num1 = document.getElementById("num1").value;
+        let num2 = document.getElementById("num2").value;
+        let num3 = document.getElementById("num3").value;
+        let num4 = document.getElementById("num4").value;
+        let num5 = document.getElementById("num5").value;
+        let num6 = document.getElementById("num6").value;
+        let ticket1 = new Ticket(num1, num2, num3, num4, num5, num6);
+        bag.push(ticket1);
+        let ticket2 = new Ticket(1,2,3,4,5,6);
+        bag2.push(ticket2);
+        let check;
+        for (let i = 0; i<bag.length;i++){
+            for (let j = 0; j < bag2.length;j++){
+                if (bag[i]===bag2[j]){
+                   check = true;
+                }
+            }
+        }
+        if (check){
+            alert('you win');
+        }else {
+            alert('you lose');
+        }
+    }
+
+    class Ticket {
+        constructor(number1, number2, number3, number4, number5, number6) {
+            this.number1 = number1;
+            this.number2 = number2;
+            this.number3 = number3;
+            this.number4 = number4;
+            this.number5 = number5;
+            this.number6 = number6;
+        }
+
+        getNumber1() {
+            return this.number1;
+        }
+
+        setNumber1(value) {
+            this.number1 = value;
+        }
+
+        getNumber2() {
+            return this.number2;
+        }
+
+        setNumber2(value) {
+            this.number2 = value;
+        }
+
+        getNumber3() {
+            return this.number3;
+        }
+
+        setNumber3(value) {
+            this.number3 = value;
+        }
+
+        getNumber4() {
+            return this.number4;
+        }
+
+        setNumber4(value) {
+            this.number4 = value;
+        }
+
+        getNumber5() {
+            return this.number5;
+        }
+
+        setNumber5(value) {
+            this.number5 = value;
+        }
+
+        getNumber6() {
+            return this.number6;
+        }
+
+        setNumber6(value) {
+            this.number6 = value;
+        }
+    }
+    // ticket1.getNumber1();
+    // ticket1.getNumber2();
+    // ticket1.getNumber3();
+    // ticket1.getNumber4();
+    // ticket1.getNumber5();
+    // ticket1.getNumber6();
+
+</script>
 </body>
 </html>
