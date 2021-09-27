@@ -9,6 +9,31 @@ Ví dụ: numerators = [5, 2, 5] và denominators = [6, 3, 4], thì kết quả 
 ⇨	5/4 là phân số lớn nhất, có chỉ số là 2.-->
 </head>
 <body>
-
+<script>
+    let rowarr = parseFloat(prompt('input row '));
+    let colarr = parseFloat(prompt('input col'));
+    function maxFraction() {
+        let arr1 = new Array(rowarr);
+        let arr2 = new Array(colarr);
+        let max =arr1[0];
+        let min = arr2[0];
+        for (let row = 0; row < arr1.length; row++) {
+            let value = parseFloat(prompt('input at [' + row + '] : '));
+            arr1[row] = value;
+            if (arr1[row] > max) {
+                max = arr1[row];
+            }
+        }
+        for (let col = 0; col < arr2.length; col++) {
+            let value2 = parseFloat(prompt('input at [' + col + '] : '));
+            arr2[col] = value2;
+            if (arr2[col] < min){
+                min = arr2[col];
+            }
+        }
+        return Math.floor(max/min);
+    }
+    console.log(maxFraction());
+</script>
 </body>
 </html>
