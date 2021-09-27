@@ -7,28 +7,39 @@
 </head>
 <body>
 <script>
-    let rowarr = parseInt(prompt('input row '));
-    let colarr = parseInt(prompt('input col'));
-    function caculatorMinmax() {
-        let max = 0;
-        let min = 0;
-        let arr2d = new Array(rowarr);
-        for (let row = 0; row < arr2d.length; row++) {
-            arr2d[row] = new Array(colarr);
-            for (let col = 0; col < arr2d[row].length; col++) {
-                let value = parseInt(prompt('input at [' + row + '] [' + col + '] : '));
-                arr2d[row][col] = value;
-                if (arr2d[row][col]>max){
-                    max = arr2d[row][col];
+    function createMatrix() {
+        let rowArr = parseInt(prompt('Enter the row number '));
+        let colArr = parseInt(prompt('Enter the col number'));
+        let maTrix = [];
+        for (let i = 0; i < colArr; i++) {
+            let row = [];
+            for (let j = 0; j < rowArr; j++) {
+                row[j] = parseInt(prompt('Enter the item at [' + i + '] [' + j + '] : '));
+            }
+            maTrix[i] = row;
+        }
+        return maTrix;
+    }
+
+    let matrix1 = createMatrix();
+
+    function findMaxmin(matrix) {
+        let max = matrix[0][0];
+        let min = matrix[0][0];
+        for (let i = 0; i < matrix.length; i++) {
+            for (let j = 0; j < matrix[i].length; j++) {
+                if (max < matrix[i][j]) {
+                    max = matrix[i][j];
                 }
-                if (arr2d[row][col]<min){
-                    min = arr2d[row][col];
+                if (min > matrix[i][j]) {
+                    min = matrix[i][j];
                 }
             }
         }
-        console.log('min is ' + min + '\n' +'max is ' + max);
+        console.table(matrix);
+        alert(" The max element is : " + max + ' \nThe min element is : ' + min);
     }
-    caculatorMinmax();
+    findMaxmin(matrix1);
 </script>
 </body>
 </html>

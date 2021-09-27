@@ -7,28 +7,44 @@
 </head>
 <body>
 <script>
-    let rowarr = parseInt(prompt('input row '));
-    let colarr = parseInt(prompt('input col'));
-    function listPrime() {
-        let arr2d = new Array(rowarr);
-        let check = true;
-        let count = 0;
-        for (let row = 0; row < arr2d.length; row++) {
-            arr2d[row] = new Array(colarr);
-            for (let col = 0; col < arr2d[row].length; col++) {
-                let value = parseInt(prompt('input at [' + row + '] [' + col + '] : '));
-                arr2d[row][col] = value;
-                if (arr2d[row][col]%arr2d[row][row]===0){
-                    check = true;
-                }
-            }
-            if (check){
-                count = count + 1;
+    let rowLength = parseInt(prompt('Enter the row number '));
+    let colLength = parseInt(prompt('Enter the col number'));
+    let maTrix = [];
+    let arrPrime = [];
+    for (let i = 0; i < rowLength; i++) {
+        let row = [];
+        for (let j = 0; j < colLength; j++) {
+            row[j] = parseInt(prompt('Enter the item at [' + i + '] [' + j + '] : '));
+        }
+        maTrix[i] = row;
+    }
+
+    function checkPrime(number) {
+        if (number < 2) {
+            return false;
+        }
+        for (let i = 2; i <= Math.sqrt(number); i++) { // i < căn bậc 2 của i
+            if (number % i === 0) {
+                return false;
             }
         }
-        return count;
+        return true;
     }
-    console.log(listPrime());
+
+    function findPrime(maTrix) {
+        for (let i = 0; i < maTrix.length; i++) {
+            for (let j = 0; j < maTrix[i].length; j++) {
+                if (checkPrime(maTrix[i][j])) {
+                    arrPrime.push(maTrix[i][j]);
+                }
+            }
+        }
+
+    }
+
+    console.table(maTrix);
+    console.table(arrPrime);
+    findPrime(maTrix);
 </script>
 </body>
 </html>

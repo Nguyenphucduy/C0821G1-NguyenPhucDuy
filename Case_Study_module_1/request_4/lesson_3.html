@@ -12,28 +12,26 @@ Ví dụ: s1 = "aabcc" và s2 = "adcaa", thì kết quả commonCharacterCount(s
 
 
 <script>
-    let str1="aabcdddc";
-    let str2="aaaddbbbcaa";
-    let arr1=str1.split('');
-    let arr2=str2.split('');
-    let arr3=[];
-    for(let i=0;i<arr1.length;i++){
-        for(j=0;j<arr2.length;j++){
-            if(arr1[i]===arr2[j]){
-                arr3.push(arr1[i]);
-                arr1.splice(i,1);
-                arr2.splice(j,1);
-                j--;
-
+    function commonCharacterCount(s1, s2) {
+        let arr1 = s1.split('');
+        let arr2 = s2.split('');
+        let count = 0;
+        for (let i = 0; i < arr1.length; i++) {
+            for (let j = 0; j < arr2.length; j++) {
+                if (arr1[i] === arr2[j]) {
+                    count++;
+                    arr1.splice(i, 1); // xóa 2 kí tự giống nhau, i-- để vòng lặp i ngoài thành arr1[0] và xét tiếp
+                    arr2.splice(j, 1);
+                    i--;
+                    break;
+                }
             }
         }
-
+        return count;
     }
-
-    document.write(arr1 + '<br>');
-    document.write(arr2 + '<br>');
-    document.write(arr3 + '<br>');
-    document.write(" The number of duplicate elements in the two arrays is "+ arr3.length);
+    let s1 = prompt('enter the character string 1' );
+    let s2 = prompt('enter the character string 2');
+    alert('The number of similar characters between two strings is : ' + commonCharacterCount(s1,s2));
 </script>
 
 </body>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+<!--Cho dãy số nguyên bao gồm cả số âm lẫn số dương. Viết chương trình tìm dãy con liên tục có tổng lớn nhất.
+Ví dụ: Với dãy số A = {-2, -5, 6, -2, -3, 1, 5, -6} thì tổng lớn nhất của dãy con liên tục ta nhận được là 7.-->
+<body>
+<script>
+    let array=[];
+    let max = 0;
+    let lengthArray = parseInt(prompt('Enter the length of array a'));
+    for(let i = 0; i< lengthArray ;i++) {
+        array.push(parseInt(prompt("Input the " + i + ' element of array a :'))); //a[i] =item
+    }
+    for (let i = 0; i < lengthArray ;i++) {
+        for (let j = i ; j < lengthArray ; j ++) {
+            let sum = 0; //  xét điều điện mỗi lần lặp, sum về lại 0 để xét tiếp
+            for (let k = i; k <= j; k ++) {
+                sum += array[k];
+            }
+            if (sum > max) {
+                max = sum;
+            }
+        }
+    }
+    alert('The largest sum in a continuous subsequence is  ' +  max);
+</script>
+</body>
+</html>

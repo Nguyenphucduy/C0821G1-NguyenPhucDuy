@@ -10,21 +10,18 @@ Ví dụ: s = "cabca", thì kết quả differentSymbolsNaive(s) = 3.
 </head>
 <body>
 <script>
-    let str = prompt('Enter your characters ');
-    let arr = [];
-    function fdifferentSymbolsNaive() {
-        arr = str.split('');
-        for (let i =0 ; i < arr.length ; i++){
-            for (let j = i+1 ; j< arr.length ; j++){
-                if (arr[i]===arr[j]){
-                    arr.splice(j,1);
-                    j--;
-                }
+    function fdifferentSymbolsNaive(str) {
+        let arr = [];
+        for (let i = 0; i < str.length; i++) {
+            if (arr.indexOf(str.charAt(i)) === -1) { // check kí tự đó có trong arr ko? -1  là ko có
+                arr.push(str.charAt(i));
             }
         }
-        return arr;
+        return arr.length;
     }
-    console.log(fdifferentSymbolsNaive());
+
+    let str = prompt(' enter the character string ');
+    alert('there are ' + fdifferentSymbolsNaive(str) + ' different characters');
 
 </script>
 </body>

@@ -19,51 +19,19 @@ Khi KH không trúng giải nào thì hệ thống hiển thị thông báo “C
 
 </head>
 <body>
-<label for="num1">Number 1</label><input type="text" id="num1"><br>
-<label for="num2">Number 2</label><input type="text" id="num2"><br>
-<label for="num3">Number 3</label><input type="text" id="num3"><br>
-<label for="num4">Number 4</label><input type="text" id="num4"><br>
-<label for="num5">Number 5</label><input type="text" id="num5"><br>
-<label for="num6">Number 6</label><input type="text" id="num6"><br>
-<button onclick="checkResult()">Check result</button>
+<div>
+    <p id ='result'></p>
+</div>
 <script>
-    let bag = [];
-    let bag2 = [];
-
-    function checkResult() {
-        let num1 = document.getElementById("num1").value;
-        let num2 = document.getElementById("num2").value;
-        let num3 = document.getElementById("num3").value;
-        let num4 = document.getElementById("num4").value;
-        let num5 = document.getElementById("num5").value;
-        let num6 = document.getElementById("num6").value;
-        let ticket1 = new Ticket(num1, num2, num3, num4, num5, num6);
-        bag.push(ticket1);
-        let ticket2 = new Ticket(1,2,3,4,5,6);
-        bag2.push(ticket2);
-        let check;
-        for (let i = 0; i<bag.length;i++){
-            for (let j = 0; j < bag2.length;j++){
-                if (bag[i]===bag2[j]){
-                   check = true;
-                }
-            }
-        }
-        if (check){
-            alert('you win');
-        }else {
-            alert('you lose');
-        }
-    }
-
-    class Ticket {
-        constructor(number1, number2, number3, number4, number5, number6) {
-            this.number1 = number1;
-            this.number2 = number2;
-            this.number3 = number3;
-            this.number4 = number4;
-            this.number5 = number5;
-            this.number6 = number6;
+    class Lottery {
+        constructor(number1, number2, number3, number4, number5, number6, grade = '') {
+            this._number1 = number1;
+            this._number2 = number2;
+            this._number3 = number3;
+            this._number4 = number4;
+            this._number5 = number5;
+            this._number6 = number6;
+            this._grade = grade;
         }
 
         getNumber1() {
@@ -113,14 +81,79 @@ Khi KH không trúng giải nào thì hệ thống hiển thị thông báo “C
         setNumber6(value) {
             this.number6 = value;
         }
-    }
-    // ticket1.getNumber1();
-    // ticket1.getNumber2();
-    // ticket1.getNumber3();
-    // ticket1.getNumber4();
-    // ticket1.getNumber5();
-    // ticket1.getNumber6();
 
+        getGrade() {
+            return this.grade;
+        }
+
+        setGrade(value) {
+            this.grade = value;
+        }
+
+        getNumber() { // array chứa 6 number
+            return [this.number1, this.number2, this.number3, this.number4, this.number5, this.number6];
+        }
+
+        getRandomNumber() { // user want random
+            this.setNumber1(Math.floor(Math.random() * 99));
+            this.setNumber2(Math.floor(Math.random() * 99));
+            this.setNumber3(Math.floor(Math.random() * 99));
+            this.setNumber4(Math.floor(Math.random() * 99));
+            this.setNumber5(Math.floor(Math.random() * 99));
+            this.setNumber6(Math.floor(Math.random() * 99));
+        }
+
+        getInfo() {  // take info vé số trúng thưởng hay ko?
+            return 'ticket' + this.getNumber().join(' ') + this.getGrade();
+        }
+    }
+
+    let arrLottery = [];
+
+    function menu() {
+        let choose;
+        if (arrLottery < 4) {
+            choose = parseInt(prompt(' you can two choose \n' +
+                '1.you want choose number \n' +
+                '2.system choose number'));
+        }
+        if (choose === 1){
+            inputLottery();
+        }else if (choose === 2){
+            randomLottery();
+        }
+
+    }
+
+    function drawLottery(arr) {
+        let Lottery;
+        let str = '';
+        for (let i = 0; i < arr.length; i++) { // 6 lottery
+            str += '<input value="' + arr[i].getNumber1() + '" >' +
+                '<input value="' + arr[i].getNumber2() + '" >' +
+                '<input value="' + arr[i].getNumber3() + '" >' +
+                '<input value="' + arr[i].getNumber4() + '" >' +
+                '<input value="' + arr[i].getNumber5() + '" >' +
+                '<input value="' + arr[i].getNumber6() + '" >' + '<br>'
+        }
+        document.getElementById('result').innerHTML= str;
+    }
+    function randomLottery() {
+        let lottery = new Lottery();
+        lottery.getRandomNumber();
+        arrLottery.push(lottery);
+        drawLottery(arrLottery);
+    }
+    function inputLottery() {
+        let arrNum = [];
+        for (let i = 0;i < 6;i++){
+            arrNum[i]=parseInt(prompt('Enter the ' + (i+1) +  ' number of lottery '));
+        }
+        let lottery = new Lottery(arrNum[0],arrNum[1],arrNum[2],arrNum[3],arrNum[4],arrNum[5]); // truyền vào constructors
+        arrLottery.push(lottery);
+        drawLottery(arrLottery);
+    }
+    menu();
 </script>
 </body>
 </html>

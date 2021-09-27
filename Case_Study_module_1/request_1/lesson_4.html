@@ -6,21 +6,25 @@
 </head>
 <body>
 <script>
-    for (let i = 0; i <= 5; i++) {
-
-        for (let j = 5; j > i; j--) {
-            document.write("&nbsp&nbsp");
+    let height = parseInt(prompt('enter the height'));
+    let width = height*2 -1; // col 9 = row5*2 -1
+    let shape = '';
+    for (let i = 1; i <= height; i++) {
+        for (let j = 0; j < width/2 - i; j++) { //col/2 - row '&ensp;'
+            shape += '&ensp;';
         }
-
-        for (let k = 1; k <= i * 2 - 1; k++) {
-            if (k === 1 || i === 5|| k === i * 2 - 1){ // i là hàng cuối cùng
-            document.write("*");
-            }else {
-                document.write("&nbsp&nbsp");
+        for (let k = 0; k < i * 2 - 1; k++) { // row*2 -1 draw '*'
+            if (i === height) { //row[length-1]
+                shape += '*';
+            } else if (k === 0 || k === i * 2 - 2) { //col[0]row[0] or col[0]row[length-1]
+                shape += '*';
+            } else {
+                shape += '&ensp;';
             }
         }
-        document.write("<br>");
+        shape += '<br>';
     }
+    document.write(shape);
 </script>
 </body>
 </html>

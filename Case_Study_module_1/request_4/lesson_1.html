@@ -5,29 +5,46 @@
     <title>Title</title>
     <!--Bài 1: Viết một hàm chuẩn hóa xâu ký tự:
      biến đổi xâu ký tự thành xâu sao cho trong xâu không có 2 dấu cách liền nhau và bắt đầu mỗi từ phải in hoa.
-    Ví dụ tRuong    TaN   HAI => Truong Tan Hai.-->
+    Ví dụ tRuong    TaN   HAI => Truong Tan Hai. Và một hàm tìm từ dài nhất trong 1 xâu ký tự.
+    Hàm main sử dụng các hàm này để nhập xâu ký tự từ bàn phím,
+    in ra xâu trước và sau khi chuẩn hóa, 1 từ dài nhất trong xâu đó.-->
 </head>
 <body>
 <script>
-    let str = prompt('enter your name');
-    let arr = [];
-    function formatString(str) {
-        let result = str.toLowerCase();
-        arr = result.split(' ');
-        for (let i = 0; i< arr.length; i++){
-            if (arr[i]=== ''){
-                arr.splice(i,1);
+    function standardized(name) {
+        name = name.trim().toLowerCase(); // del ' ' 2 bên của name & format chữ thường
+        let nameArray = Array.from(name);
+        for (let i = 0; i < nameArray.length - 1; i++) {
+            if (nameArray[i] === ' ' && nameArray[i + 1] === ' ') {
+                for (let j = i + 1; j < nameArray.length - 1; j++) { // del dấu  ' ' ,take vị trí sau đè lên vị trí trước
+                    nameArray[j] = nameArray[j + 1];
+                }
                 i--;
+                nameArray.pop();
             }
         }
-        for (let j = 0; j < arr.length;j++){
-            arr[j] = arr[j].split('');
-            arr[j][0] = arr[j][0].toUpperCase();
+        nameArray[0] = nameArray[0].toUpperCase();
+        for (let i = 0; i < nameArray.length - 1; i++) {
+            if (nameArray[i] === ' ') {
+                nameArray[i + 1] = nameArray[i + 1].toUpperCase(); // viết A từ sau dấu ' '
+            }
         }
-
+        return nameArray.join('');
     }
-    formatString(str);
-    console.log(arr.join(''));
+
+    function maxLength(name) {
+        let arrName = name.split(' ');
+        let maxName = arrName[0];
+        for (let i = 1; i < arrName.length; i++) {
+            if (maxName.length < arrName[i].length) {
+                maxName = arrName[i];
+            }
+        }
+        return maxName;
+    }
+
+    let name = prompt('Enter your name :');
+    alert('your name : ' + name + '\nstandardized name ' + standardized(name) + '\nmax length name :' + maxLength(standardized(name)));
 </script>
 </body>
 </html>
