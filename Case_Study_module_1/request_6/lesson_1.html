@@ -16,22 +16,36 @@ Giải nhì: 5 số cuối của vé KH trùng khớp với 5 số cuối của 
 Giải khuyến khích: 3 số cuối của vé KH trùng khớp với 3 số cuối của hệ thống
 Khi KH may mắn trúng giải nào thì hệ thống sẽ hiển thị kết quả là số tiền sẽ nhận được tương ứng (HV tự defined)
 Khi KH không trúng giải nào thì hệ thống hiển thị thông báo “Chúc bạn may mắn lần sau”-->
-
+    <style>
+        input {
+            width: 100px;
+            border-radius: 5px;
+            margin-bottom: 5px;
+            margin-left: 5px;
+            text-align: center;
+            background: mediumseagreen;
+            color: black;
+        }
+    </style>
 </head>
 <body>
 <div>
-    <p id ='result'></p>
+    <div>
+        <p id='result'></p>
+    </div>
+    <button onclick="menu()"> Buy ticket</button>
+    <button onclick="displayResult()"> Check result</button>
 </div>
 <script>
     class Lottery {
         constructor(number1, number2, number3, number4, number5, number6, grade = '') {
-            this._number1 = number1;
-            this._number2 = number2;
-            this._number3 = number3;
-            this._number4 = number4;
-            this._number5 = number5;
-            this._number6 = number6;
-            this._grade = grade;
+            this.number1 = number1;
+            this.number2 = number2;
+            this.number3 = number3;
+            this.number4 = number4;
+            this.number5 = number5;
+            this.number6 = number6;
+            this.grade = grade;
         }
 
         getNumber1() {
@@ -95,7 +109,7 @@ Khi KH không trúng giải nào thì hệ thống hiển thị thông báo “C
         }
 
         getRandomNumber() { // user want random
-            this.setNumber1(Math.floor(Math.random() * 99));
+            this.setNumber1(Math.floor(Math.random() * 99)); //làm tròn và random 0 - 99
             this.setNumber2(Math.floor(Math.random() * 99));
             this.setNumber3(Math.floor(Math.random() * 99));
             this.setNumber4(Math.floor(Math.random() * 99));
@@ -112,17 +126,18 @@ Khi KH không trúng giải nào thì hệ thống hiển thị thông báo “C
 
     function menu() {
         let choose;
-        if (arrLottery < 4) {
+        if (arrLottery.length < 4) {
             choose = parseInt(prompt(' you can two choose \n' +
                 '1.you want choose number \n' +
                 '2.system choose number'));
+            if (choose === 1) {
+                inputLottery();
+            } else if (choose === 2) {
+                randomLottery();
+            }
+        } else {
+            alert('you can only buy 4 lottery tickets');
         }
-        if (choose === 1){
-            inputLottery();
-        }else if (choose === 2){
-            randomLottery();
-        }
-
     }
 
     function drawLottery(arr) {
@@ -136,24 +151,78 @@ Khi KH không trúng giải nào thì hệ thống hiển thị thông báo “C
                 '<input value="' + arr[i].getNumber5() + '" >' +
                 '<input value="' + arr[i].getNumber6() + '" >' + '<br>'
         }
-        document.getElementById('result').innerHTML= str;
+        document.getElementById('result').innerHTML = str;
     }
+
     function randomLottery() {
         let lottery = new Lottery();
         lottery.getRandomNumber();
         arrLottery.push(lottery);
         drawLottery(arrLottery);
     }
+
     function inputLottery() {
         let arrNum = [];
-        for (let i = 0;i < 6;i++){
-            arrNum[i]=parseInt(prompt('Enter the ' + (i+1) +  ' number of lottery '));
+        for (let i = 0; i < 6; i++) {
+            arrNum[i] = parseInt(prompt('Enter the ' + (i + 1) + ' number of lottery '));
         }
-        let lottery = new Lottery(arrNum[0],arrNum[1],arrNum[2],arrNum[3],arrNum[4],arrNum[5]); // truyền vào constructors
+        let lottery = new Lottery(arrNum[0], arrNum[1], arrNum[2], arrNum[3], arrNum[4], arrNum[5]); // truyền vào constructors
         arrLottery.push(lottery);
         drawLottery(arrLottery);
     }
-    menu();
+
+    function checkResult(lottery) {
+        let count = 0;
+        let arr = [11, 22, 33, 44, 55, 66]; // array win
+        for (let i = arr.length - 1; i >= 0; i--) {
+            if (arr[i] === lottery.getNumber()[i]) {
+                count++;
+            } else {
+                break;
+            }
+
+        }
+        switch (count) {
+            case 6:
+                lottery.setGrade(1);
+                break;
+            case 5:
+                lottery.setGrade(2);
+                break;
+            case 4:
+            case 3:
+                lottery.setGrade(3);
+                break;
+            default :
+                lottery.setGrade(4);//lose
+                break;
+
+        }
+    }
+
+    function displayResult() {
+        let result = '';
+        for (let i = 0; i < arrLottery.length; i++) {
+            checkResult(arrLottery[i]);
+            switch (arrLottery[i].getGrade()) {
+                case 1:
+                    result += 'the first prize';
+                    break;
+                case 2:
+                    result += 'the second prize';
+                    break;
+                case 3:
+                    result += 'the third prize';
+                    break;
+
+            }
+        }
+        if (result === '') {
+            alert('Wish you luck next time');
+        } else {
+            alert('you won :' + result);
+        }
+    }
 </script>
 </body>
 </html>
