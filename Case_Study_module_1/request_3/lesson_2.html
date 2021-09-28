@@ -5,33 +5,33 @@
     <title>Title</title>
 </head>
 <body>
- <!--Bài 2: Cho 2 mảng A và B chứa số nguyên.
- Tìm ra một mảng đã được sắp xếp chứa các phần tử xuất hiện trong mảng B nhưng lại không xuất hiện A
- Chú ý các phần tử giống nhau chỉ tính là 1 lần xuất hiện
- Ví dụ:  A=[7,2,5,3,5,3] và B=[7,2,5,4,6,3,5,3] thì kết quả missingValue(A, B) = [4, 6] -->
+<!--Bài 2: Cho 2 mảng A và B chứa số nguyên.
+Tìm ra một mảng đã được sắp xếp chứa các phần tử xuất hiện trong mảng B nhưng lại không xuất hiện A
+Chú ý các phần tử giống nhau chỉ tính là 1 lần xuất hiện
+Ví dụ:  A=[7,2,5,3,5,3] và B=[7,2,5,4,6,3,5,3] thì kết quả missingValue(A, B) = [4, 6] -->
 
 <script>
-    let arrA=[];
-    let arrB=[];
+    let arrA = [];
+    let arrB = [];
     let result = [];
     let lengthA = parseInt(prompt('Input length of array A'));
-    for(let i = 0;i < lengthA;i++) {
+    for (let i = 0; i < lengthA; i++) {
         arrA.push(parseInt(prompt("Input the " + i + ' element of array A :'))); //a[i] =item
     }
     let lengthB = parseInt(prompt('Input length of array B'));
-    for(let i = 0;i < lengthB;i++) {
+    for (let i = 0; i < lengthB; i++) {
         arrB.push(parseInt(prompt("Input the " + i + ' element of array B :'))); //a[i] =item
     }
-    for(let i = 0;i < lengthB;i++) {
-        if (arrA.indexOf(arrB[i])=== -1 && result.indexOf(arrB[i]) === -1){ // arrB[i] not in arrA = -1 && arrB[i] not in result (1 time)
+    for (let i = 0; i < lengthB; i++) {
+        if (arrA.indexOf(arrB[i],0) === -1 && result.indexOf(arrB[i],0) === -1) { // arrB[i] not in arrA = -1 && arrB[i] not in result (1 time)
             result.push(arrB[i]);
         }
     }
-    result.sort(function (a,b) {
-        return a - b ;
-    }
+    result.sort(function (a, b) {
+            return a - b;
+        }
     );
-    alert('arrA :'+ arrA + ' \n arrayB :' + arrB +" \n The integers that appear in array A but not in array B are :" + result);
+    alert('arrA :' + arrA + ' \n arrayB :' + arrB + " \n The integers that appear in array A but not in array B are :" + result);
 
 </script>
 </body>

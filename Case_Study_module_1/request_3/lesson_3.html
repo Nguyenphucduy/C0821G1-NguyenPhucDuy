@@ -13,22 +13,23 @@ Ví dụ: numerators = [5, 2, 5] và denominators = [6, 3, 4], thì kết quả 
     let nuMerators = [];
     let deNominators = [];
     let lengthArray = parseInt(prompt('Input length of array Numerators')); // because length 2 array = equal
-    for ( let i = 0 ; i < lengthArray;  i++){
-       nuMerators.push(parseInt(prompt('Input item '+ i +' of array Numerators')));
-       deNominators.push(parseInt(prompt('Input item '+ i +' of array Denominators')));
+    for (let i = 0; i < lengthArray; i++) {
+        nuMerators.push(parseInt(prompt('Input item ' + i + ' of array Numerators')));
+        deNominators.push(parseInt(prompt('Input item ' + i + ' of array Denominators')));
     }
     //            1/2 --- 2/3
     // đồng quy   3/6 --- 4/6
-    function maxFraction(nuMerators,deNominators) {
+    function maxFraction(nuMerators, deNominators) {
         let maxIndex = 0;
-        for (let i = 1; i < nuMerators.length; i++){
-            if (nuMerators[maxIndex]*deNominators[i] < nuMerators[i]*deNominators[maxIndex]){
-                maxIndex = i ;
+        for (let i = 1; i < nuMerators.length; i++) {
+            if (nuMerators[maxIndex] * deNominators[i] < nuMerators[i] * deNominators[maxIndex]) {
+                maxIndex = i;
             }
         }
         return maxIndex;
     }
-    alert('whose index is ' + maxFraction(nuMerators,deNominators));
+
+    alert('whose index is ' + maxFraction(nuMerators, deNominators));
 </script>
 </body>
 </html>

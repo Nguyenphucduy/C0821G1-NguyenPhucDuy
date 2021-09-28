@@ -8,11 +8,10 @@
 <script>
     let array = [];
     for(let i=1;i<=10;i++) {
-        let value = parseInt(prompt('enter integer elements ' + i));
-        array[i] = value;
+        array.push(parseInt(prompt("Input the " + i + ' element of array A :')));
     }
     let v = parseInt(prompt(" input V :"));
-    let check = false;
+    let check;
     for(let i=0;i<10;i++)
     {
 
@@ -22,7 +21,7 @@
             break;
         }
     }
-    if (check===true)
+    if (check)
     {
        alert( ' V is in the array');
     }

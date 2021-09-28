@@ -11,18 +11,13 @@
     let LOWER = 'abcdefghijklmnopqrstuvwxyz';
     let result = [];
 
-    for(let x=0; x<array.length; x++)
-    {
-        if(UPPER.indexOf(array[x]) !== -1) // seach index từ 0
+    for (let x = 0; x < array.length; x++) {
+        if (UPPER.indexOf(array[x]) !== -1) // seach index từ 0
         {
             result.push(array[x].toLowerCase()); // a->A
-        }
-        else if(LOWER.indexOf(array[x]) !== -1)
-        {
+        } else if (LOWER.indexOf(array[x]) !== -1) {
             result.push(array[x].toUpperCase()); // A->a
-        }
-        else
-        {
+        } else {
             result.push(array[x]);
         }
     }

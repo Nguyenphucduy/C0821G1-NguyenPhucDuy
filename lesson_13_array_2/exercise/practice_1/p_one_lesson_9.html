@@ -6,17 +6,13 @@
 </head>
 <body>
 <script>
-    let a =[];
+    let a = [];
     let b = [];
-    for(let i=0;i<10;i++)
-    {
-        let valuea=parseInt(prompt( 'enter the number of your : ' + i));
-        a[i] = valuea;
+    for (let i = 0; i < 10; i++) {
+        a.push(parseInt(prompt("Input the " + i + ' element of array A :')));
     }
-    for(let j=0;j<10;j++)
-    {
-        let valueb=parseInt(prompt( 'enter the number of your : ' + j));
-        b[j] = valueb;
+    for (let j = 0; j < 10; j++) {
+        b.push(parseInt(prompt("Input the " + i + ' element of array A :')));
     }
     let c = a.concat(b);
     document.write(c);

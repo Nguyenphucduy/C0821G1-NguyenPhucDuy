@@ -16,7 +16,7 @@
             for (let j = 0; j < n; j++) {
                 row[j] = parseInt(prompt('Enter the item at [' + i + '] [' + j + '] : '));
             }
-            maTrix[i] = row;
+            maTrix[i] = row;// arr maxTrix chứa nhiều arr row
         }
         return maTrix;
     }
@@ -24,7 +24,7 @@
     let total = 0 ;
     function totalEven(maTrix) {
         for (let i = 0; i < maTrix.length; i++) {
-            for (let j = 0; j < maTrix[i].length; j++) {
+            for (let j = 0; j < maTrix[i].length; j++) {// số col nhỏ hơn số row.length
                 if (maTrix[i][j] % 2 === 0) {
                     total += maTrix[i][j];
                 }

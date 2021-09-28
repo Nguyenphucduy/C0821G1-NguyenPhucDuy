@@ -26,42 +26,49 @@ Bật tắt công tắc 10 lần.-->
         constructor() {
             this.status = true;
         }
-        getButton(){
+
+        getButton() {
             return status;
         }
-        setButton(status){
-            for (let i = 1 ; i <= 10 ; i++){
-            if (this.status){
-                let check = confirm('you want to turn off the lamp?');
-                if (check){
-                    lamp.lampOff();
-                    document.write('<br>');
-                    this.status = true;
-                }else {
-                    lamp.lampOn();
-                    document.write('<br>');
-                    this.status = false;
+
+        setButton(status) {
+            for (let i = 1; i <= 10; i++) {
+                if (this.status) {
+                    let check = confirm('you want to turn off the lamp?');
+                    if (check) {
+                        lamp.lampOff();
+                        document.write('<br>');
+                        this.status = true;
+                    } else {
+                        lamp.lampOn();
+                        document.write('<br>');
+                        this.status = false;
+                    }
                 }
             }
         }
-        }
     }
+
     class Lamp {
         constructor() {
             this.startus = true;
         }
-        getStatus (){
+
+        getStatus() {
             return status;
         }
-        lampOn (){
+
+        lampOn() {
             document.write('the lamp is still on');
         }
-        lampOff (){
+
+        lampOff() {
             document.write('the lamp is off');
         }
     }
+
     let button = new Button();
-    let lamp = new  Lamp();
+    let lamp = new Lamp();
     button.setButton();
 </script>
 </body>

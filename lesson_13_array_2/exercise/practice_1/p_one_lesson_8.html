@@ -6,16 +6,13 @@
 </head>
 <body>
 <script>
-    let array=[10];
-    let index;
-    for(let i=0;i<10;i++)
-    {
-        let value=parseInt(prompt( 'enter the number of your : ' + i));
-        array[i] = value;
+    let array = [];
+    for (let i = 0; i < 10; i++) {
+        array.push(parseInt(prompt("Input the " + i + ' element of array A :')));
     }
-    array.sort(function (a,b) {
+    array.sort(function (a, b) {
         return b - a;
-    }
+    });
     document.write(array);
 </script>
 </body>

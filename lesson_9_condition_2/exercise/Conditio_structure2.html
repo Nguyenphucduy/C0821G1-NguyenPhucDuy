@@ -25,15 +25,15 @@
 </script>
 <script>
     alert("lesson 4");
-    let canha = parseInt(prompt("input canh a ="));
-    let canhb = parseInt(prompt("input canh b"));
-    let ss= canha * canhb
+    let aa = parseInt(prompt("input a ="));
+    let bb = parseInt(prompt("input b"));
+    let ss= aa * bb;
     alert("area of rectangular is " + ss );
 </script>
 <script>
     alert("lesson 5");
     let h = parseInt(prompt("input height ="));
-    let canhc = parseInt(prompt("input canh c"));
+    let canhc = parseInt(prompt("input  c"));
     let sss= h * canhc
     alert("area of triangle is " + sss );
 </script>
@@ -50,11 +50,11 @@
     let y1 = parseInt(prompt("input y1"));
     let z1 = parseInt(prompt("input z1 (z1 khac 0 )" ));
     let delta = x1**2 - 4*z1*y1 ;
-    if (x1+y1+z1==0) {
+    if (x1+y1+z1===0) {
         alert("Phương trình có 2 nghiệm x1 = 1 ; x2 = " + (y1/z1));
     }   else if (delta<0) {
         alert("Phương trình vô nghiệm !");
-    }   else if (delta==0) {
+    }   else if (delta===0) {
         alert("Phương trình có nghiệm kép x1 = x2 = " + (-x1/(2*z1)));
     }   else if (delta>0) {
         alert("Phương trình có 2 nghiệm phân biệt x1 = " + ((-x1+ Math.sqrt(delta))/(2*z1)) + " ; x2 = " + ((-x1- Math.sqrt(delta))/(2*z1)));

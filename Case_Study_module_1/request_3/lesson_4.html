@@ -8,11 +8,11 @@
 <!--Bài 4: Viết một chương trình nhập một số từ bàn phím và in ra màn hình bằng chữ.
  Ví dụ 1234, kết quả in ra màn hình là một hai ba bốn. -->
 <script>
-    let stringNumber = ['zero','one','two','three','four','five','six','seven','eight','nine'];
+    let stringNumber = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine'];
     let numBer = prompt('Enter your number');
     let result = '';
-    for(let i=0;i< numBer.length;i++) {
-       result += stringNumber[numBer[i]]; // number[i]=0 -> stringNumber[0] = zero & result = + string
+    for (let i = 0; i < numBer.length; i++) {
+        result += stringNumber[numBer[i]]; // number[i]=0 -> stringNumber[0] = zero & result = + string
     }
     alert('your number is :' + numBer + '\n' + 'change the letter is :' + result);
 </script>

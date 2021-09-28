@@ -51,47 +51,56 @@ Chỉ ăn táo khi khối lượng của quả táo lớn hơn 0.
         setWeight(value) {
             this._weight = value;
         }
-        checkMapple(){
+
+        checkMapple() {
             console.log(' The mass of the apple is: ' + this.weight);
         }
+
         // decreaseWeight(){
         //     this.weight--;
         // }
     }
+
     class Human {
-        constructor(name,gender,weight,) {
+        constructor(name, gender, weight,) {
             this._weight = weight;
             this._name = name;
             this._gender = gender;
         }
-        getInformation (){
-            return ' name :' + this._name + ' weight :'+  this._weight + ' gender :'+ this._gender;
+
+        getInformation() {
+            return ' name :' + this._name + ' weight :' + this._weight + ' gender :' + this._gender;
         }
-        setInformation(value1,value2,value3){
+
+        setInformation(value1, value2, value3) {
             this._name = value1;
             this._weight = value2;
             this._gender = value3;
         }
-        talKing(){
+
+        talKing() {
             console.log('hello eva');
         }
-        eatApple(){
-            if (apple1.weight>0) {
+
+        eatApple() {
+            if (apple1.weight > 0) {
                 this._weight++;
                 console.log(' weight of : ' + this._name + ' now is ' + this._weight + 'kg');
             }
         }
-        checkWeightapple (){
+
+        checkWeightapple() {
             apple1.checkMapple();
         }
 
     }
-    let adam = new Human('adam','male','60kg');
-    let eva = new Human('eva','female','50kg');
-    let apple1 = new Apple() ;
+
+    let adam = new Human('adam', 'male', '60kg');
+    let eva = new Human('eva', 'female', '50kg');
+    let apple1 = new Apple();
     console.log(adam.getInformation());
     console.log(eva.getInformation());
-    adam.setInformation('adam2',65,'male');
+    adam.setInformation('adam2', 65, 'male');
     console.log(adam.getInformation());
     adam.talKing();
     adam.eatApple();

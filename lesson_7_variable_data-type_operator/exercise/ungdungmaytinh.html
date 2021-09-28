@@ -11,44 +11,47 @@
     <input type="text" name="number" id="number1">
     <input type="text" name="number" id="number2">
     <br>
-    <input type="button" value="Addition(+)" onclick="phepcong();">
-    <input type="button" value="Subtraction(-)" onclick="pheptru();">
-    <input type="button" value="Multiplication(X)" onclick="phepnhan();">
-    <input type="button" value="Division(/)" onclick="phepchia();">
+    <input type="button" value="Addition(+)" onclick="Addition();">
+    <input type="button" value="Subtraction(-)" onclick="Subtraction();">
+    <input type="button" value="Multiplication(X)" onclick="Multiplication();">
+    <input type="button" value="Division(/)" onclick="Division();">
 </form>
-<p id="ketqua"></p>
+<p id="result"></p>
 <script>
-    function phepcong(){
+    function Addition() {
         let A = document.getElementById("number1").value;
         let B = document.getElementById("number2").value;
         let a = parseInt(A);
         let b = parseInt(B);
-        let C = a+b;
-        document.getElementById("ketqua").innerHTML = "Kết quả =" + C;
+        let C = a + b;
+        document.getElementById("result").innerHTML = "result = " + C;
     }
-    function pheptru(){
+
+    function Subtraction() {
         let A = document.getElementById("number1").value;
         let B = document.getElementById("number2").value;
         let a = parseInt(A);
         let b = parseInt(B);
-        let D = a-b;
-        document.getElementById("ketqua").innerHTML = "Kết quả =" + D ;
+        let D = a - b;
+        document.getElementById("result").innerHTML = "result = " + D;
     }
-    function phepnhan(){
+
+    function Multiplication() {
         let A = document.getElementById("number1").value;
         let B = document.getElementById("number2").value;
         let a = parseInt(A);
         let b = parseInt(B);
-        let E = a*b;
-        document.getElementById("ketqua").innerHTML = "Kết quả =" + E ;
+        let E = a * b;
+        document.getElementById("result").innerHTML = "result = " + E;
     }
-    function phepchia(){
+
+    function Division() {
         let A = document.getElementById("number1").value;
         let B = document.getElementById("number2").value;
         let a = parseInt(A);
         let b = parseInt(B);
-        let F = a/b;
-        document.getElementById("ketqua").innerHTML = "Kết quả =" + F ;
+        let F = a / b;
+        document.getElementById("result").innerHTML = "result = " + F;
     }
 </script>
 </body>

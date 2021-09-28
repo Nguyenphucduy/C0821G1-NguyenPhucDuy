@@ -2,10 +2,12 @@
 <html>
 
 <head>
-    <meta charset=utf-8 />
+    <meta charset=utf-8/>
     <title>JS Bin</title>
     <style>
-        body {padding-top:200px}
+        body {
+            padding-top: 200px
+        }
     </style>
 </head>
 
@@ -17,12 +19,14 @@
 <script>
     let x = 0; //index
     let array = Array();
+
     function add_element_to_array() {
         array[x] = document.getElementById("Value").value;// lấy value input text và gán cho x=index
         alert("Element: " + array[x] + " Added at index " + x);
         x++;// x tăng
         document.getElementById("Value ").value = "";// gán text = rỗng
     }
+
     function display_array() {
         let e = "<hr/>"; // kẻ ngang phân cách items
         for (let i = 0; i < array.length; i++) { // duyệt các items

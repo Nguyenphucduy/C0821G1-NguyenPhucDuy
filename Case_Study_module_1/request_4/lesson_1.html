@@ -12,8 +12,8 @@
 <body>
 <script>
     function standardized(name) {
-        name = name.trim().toLowerCase(); // del ' ' 2 bên của name & format chữ thường
-        let nameArray = Array.from(name);
+        name = name.trim().toLowerCase(); //  trim()del xóa tất cả những khoảng trắng ở đầu và cuối chuỗi& format chữ thường
+        let nameArray = Array.from(name);//Array.from được dùng để convert giá trị về kiểu Array
         for (let i = 0; i < nameArray.length - 1; i++) {
             if (nameArray[i] === ' ' && nameArray[i + 1] === ' ') {
                 for (let j = i + 1; j < nameArray.length - 1; j++) { // del dấu  ' ' ,take vị trí sau đè lên vị trí trước

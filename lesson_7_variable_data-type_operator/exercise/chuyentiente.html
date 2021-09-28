@@ -19,7 +19,7 @@
         <option value="USD">USD</option>
     </select>
     <button onclick="convert()">transfers</button>
-    <span id="ket qua"> Money is your is :</span>
+    <span id="result"> Money is your is :</span>
 </form>
 
 <script>
@@ -30,13 +30,13 @@
         let result ;
 
         if ( from === "VND" && to === "USD" ){
-            result = amount / 23000;
+            result = amount / 23000 + 'USD';
         } else if ( from === "USD" && to === "VND"){
-            result = amount * 23000;
+            result = amount * 23000 + 'VNĐ';
         } else {
             result = amount;
         }
-        document.getElementById("ket qua").innerText =  result;
+        document.getElementById("result").innerText =  result;
     }
 </script>
 </body>

@@ -9,11 +9,11 @@
     let month = parseInt(prompt('input month'));
     let money = parseInt(prompt('input money'));
     let interest = parseFloat(prompt('input interest'));
-    let lai = interest*money;
+    let tax = interest*money;
     let result;
     for (let i=1;i<=month;i++)
     {
-        lai = money + lai;
+        tax = money + tax;
         result= (month*(money+interest))/100;
     }
     alert("your debt amount is " + result);

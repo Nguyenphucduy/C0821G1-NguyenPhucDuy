@@ -7,17 +7,21 @@
 </head>
 <body>
 <script>
-    let rowLength = parseInt(prompt('Enter the row number '));
-    let colLength = parseInt(prompt('Enter the col number'));
-    let maTrix = [];
-    let arrPrime = [];
-    for (let i = 0; i < rowLength; i++) {
-        let row = [];
-        for (let j = 0; j < colLength; j++) {
-            row[j] = parseInt(prompt('Enter the item at [' + i + '] [' + j + '] : '));
+    function createMatrix() {
+        let rowLength = parseInt(prompt('Enter the row number '));
+        let colLength = parseInt(prompt('Enter the col number'));
+        let maTrix = [];
+        for (let i = 0; i < rowLength; i++) {
+            let row = [];
+            for (let j = 0; j < colLength; j++) {
+                row[j] = parseInt(prompt('Enter the item at [' + i + '] [' + j + '] : '));
+            }
+            maTrix[i] = row;
         }
-        maTrix[i] = row;
+        return maTrix;
     }
+
+    let maTrix = createMatrix();
 
     function checkPrime(number) {
         if (number < 2) {
@@ -30,6 +34,8 @@
         }
         return true;
     }
+
+    let arrPrime = [];
 
     function findPrime(maTrix) {
         for (let i = 0; i < maTrix.length; i++) {

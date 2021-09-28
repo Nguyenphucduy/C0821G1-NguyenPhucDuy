@@ -121,9 +121,7 @@ Khi KH không trúng giải nào thì hệ thống hiển thị thông báo “C
             return 'ticket' + this.getNumber().join(' ') + this.getGrade();
         }
     }
-
-    let arrLottery = [];
-
+    let arrLottery = [];// mảng này xài cho menu gồm 1 mảng khác chứa 6 number
     function menu() {
         let choose;
         if (arrLottery.length < 4) {
@@ -140,10 +138,9 @@ Khi KH không trúng giải nào thì hệ thống hiển thị thông báo “C
         }
     }
 
-    function drawLottery(arr) {
-        let Lottery;
+    function showLottery(arr) {
         let str = '';
-        for (let i = 0; i < arr.length; i++) { // 6 lottery
+        for (let i = 0; i < arr.length; i++) { // arr gồm 6 number
             str += '<input value="' + arr[i].getNumber1() + '" >' +
                 '<input value="' + arr[i].getNumber2() + '" >' +
                 '<input value="' + arr[i].getNumber3() + '" >' +
@@ -158,7 +155,7 @@ Khi KH không trúng giải nào thì hệ thống hiển thị thông báo “C
         let lottery = new Lottery();
         lottery.getRandomNumber();
         arrLottery.push(lottery);
-        drawLottery(arrLottery);
+        showLottery(arrLottery);
     }
 
     function inputLottery() {
@@ -168,14 +165,14 @@ Khi KH không trúng giải nào thì hệ thống hiển thị thông báo “C
         }
         let lottery = new Lottery(arrNum[0], arrNum[1], arrNum[2], arrNum[3], arrNum[4], arrNum[5]); // truyền vào constructors
         arrLottery.push(lottery);
-        drawLottery(arrLottery);
+        showLottery(arrLottery);
     }
 
     function checkResult(lottery) {
         let count = 0;
-        let arr = [11, 22, 33, 44, 55, 66]; // array win
-        for (let i = arr.length - 1; i >= 0; i--) {
-            if (arr[i] === lottery.getNumber()[i]) {
+        let arrWin = [11, 22, 33, 44, 55, 66]; // array win
+        for (let i = 0; i < arrWin.length; i++) {
+            if (arrWin[i] === lottery.getNumber()[i]) {
                 count++;
             } else {
                 break;
@@ -204,7 +201,7 @@ Khi KH không trúng giải nào thì hệ thống hiển thị thông báo “C
         let result = '';
         for (let i = 0; i < arrLottery.length; i++) {
             checkResult(arrLottery[i]);
-            switch (arrLottery[i].getGrade()) {
+            switch (arrLottery[i].getGrade()) { //case 1 = lottery.setGrade(1)
                 case 1:
                     result += 'the first prize';
                     break;

@@ -8,16 +8,16 @@
 <script>
     let userName = prompt("Who's there?", '');
     let pass = prompt('Password?', '');
-    if (userName == 'Admin') {
+    if (userName === 'Admin') {
         alert('Welcome Home');//
-    } else if (userName == "null") {
+    } else if (userName === "null") {
         alert('Canceled');
     } else {
         alert("I don't know you");
     }
-    if (pass == 'TheMaster') {
+    if (pass === 'TheMaster') {
         alert('Welcome!');
-    } else if (pass == "null") {
+    } else if (pass === "null") {
         alert('Canceled.');
     } else {
         alert('Wrong password');

@@ -57,28 +57,29 @@ Chiếc điện thoại nokia soạn tin nhắn với nội dung bất kỳ và 
             iphone.receiveMessage(sent);
             this.pin--;
         }
+
         receiveMessage(box) {
             this.box.push(box);
             this.pin--;
         }
 
-        checkPin(){
-            if (this.pin === 0){
+        checkPin() {
+            if (this.pin === 0) {
                 alert("charge the battery");
             }
 
         }
 
-    // class phoneGap extends Mobile {
-    // }
+        // class phoneGap extends Mobile {
+        // }
 
     }
 
     let iphone = new Mobile();
     let nokia = new Mobile();
     iphone.checkPin();
-    iphone.setStatus();
     iphone.getStatus();
+    iphone.setStatus();
 
     nokia.sendMessage("hello there", iphone);
 

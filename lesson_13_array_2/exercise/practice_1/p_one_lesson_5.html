@@ -8,10 +8,9 @@
 <script>
     let array = [];
     let count = 0;
-    let n = parseInt(prompt("enter the number of elements"));
+    let n = parseInt(prompt("enter the number of length"));
     for(let i=1;i<=n;i++) {
-        let value = parseInt(prompt('enter integer elements ' + i));
-        array[i] = value;
+        array.push(parseInt(prompt("Input the " + i + ' element of array A :')));
         if (array[i] < 0){
             count = count + 1;
         }

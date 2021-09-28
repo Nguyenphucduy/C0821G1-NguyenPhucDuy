@@ -6,15 +6,14 @@
 </head>
 <body>
 <script>
-    let array=[];
-    let  n = prompt('input length of array:');
-    for(let i=0;i<n;i++)
-    {
-        let value =prompt('input item' + i);
+    let array = [];
+    let n = prompt('input length of array:');
+    for (let i = 0; i < n; i++) {
+        let value = prompt('input item' + i);
         array[i] = value;
-        if (array[i]==='-') {
-            array.splice(i,1,);
-            array.splice(i,0,'_');
+        if (array[i] === '-') {
+            array.splice(i, 1,);
+            array.splice(i, 0, '_');
         }
     }
     alert(array.join(""));
