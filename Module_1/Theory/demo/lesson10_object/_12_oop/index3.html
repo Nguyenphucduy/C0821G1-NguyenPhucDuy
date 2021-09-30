@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let samsungS21 = {
+        name: "Samsung S21",
+        price: 15000,
+        showInfo:
+            function () {
+                document.write(this.name + " " + this.price + "<br>");
+            }
+    }
+
+    let iphone13 = {
+        name: "Iphone13",
+        price: 22000,
+        age: 2,
+        showInfo: function () {
+            document.write(this.name + " " + this.price);
+        }
+    }
+
+    samsungS21.name = "S25";
+    samsungS21.showInfo();
+    iphone13.showInfo();
+</script>
+</body>
+</html>

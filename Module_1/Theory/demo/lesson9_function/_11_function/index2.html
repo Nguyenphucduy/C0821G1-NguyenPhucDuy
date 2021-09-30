@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    /*Hàm không có trả về*/
+    var x = 10;
+    var y = 10; // bien toan cuc
+
+    function increase(x) { // bien cuc bo - local
+        // let y = 5;
+        var y = 5;
+        let z = 100;
+        y++;
+
+        document.write(++x);
+        document.write("<br>");
+        document.write(y);
+        document.write("<br>");
+        document.write(z);
+
+    }
+
+    increase(8);
+    console.log("x= " + x); //10 10
+    console.log("y= " + y); //6  10
+    console.log("z= " + z); //z is not defined
+
+</script>
+</body>
+</html>

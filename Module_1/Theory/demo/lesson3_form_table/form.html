@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <form name="formLogin" action="https://www.google.com/" method="GET">
+        <label for="txtUsername">UserName:</label>
+        <input type="text" name="userName"
+               placeholder="User Name" value="Hung10" id="txtUsername"/>
+        <br>
+        <label for="txtPass">Password:</label>
+        <input type="password" name="pass" id="txtPass"/>
+        <br>
+        <label for="txtAge">Age:</label>
+        <input type="number" id="txtAge" name="age">
+        <br>
+<!--        <input type="radio" name="gender"> Male-->
+<!--        <input type="radio" name="gender"> Female-->
+<!--        <input type="radio" name="gender"> LGBT-->
+        <input type="radio" name="gender" id="rdMale"> <label for="rdMale">Male</label>
+        <input type="radio" name="gender" id="rdFemale"> <label for="rdFemale">Female</label>
+        <input type="radio" name="gender"> LGBT
+        <br>
+        <select name="address">
+            <option>----</option>
+            <option value="HN">Ha Noi</option>
+            <option value="DN">Da Nang</option>
+            <option value="HCM">Ho Chi Minh</option>
+        </select>
+        <br>
+        <input type="checkbox" name="languages"> Java
+        <input type="checkbox" name="languages"> PHP
+        <input type="checkbox" name="languages"> CSS
+        <input type="checkbox" name="languages"> HTML
+        <br>
+        <input type="hidden" name="class" value="C0821G1" />
+        <input type="submit" value="Submit Form" />
+        <input type="reset" value="Clear" />
+
+
+        <table>
+            <tr>
+                <td>
+                    <label for="txtUsername1">UserName:</label>
+                </td>
+                <td>
+                    <input type="text" name="userName"
+                           placeholder="User Name" value="Hung10" id="txtUsername1"/>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <label for="txtPass1">Password:</label>
+                </td>
+                <td>
+                    <input type="password" name="pass" id="txtPass1"/>
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

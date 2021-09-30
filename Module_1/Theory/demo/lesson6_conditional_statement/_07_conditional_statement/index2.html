@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // nhập điểm, nếu điểm >=75 thì thông báo bạn đã tốt nghiệp.
+    // ngược lại (<75), thì thông báo bạn sẽ được chuyển lớp.
+    let input = prompt("nhập điểm: "); //B1 nhập điểm
+    let absent = prompt("Input absent percent: ")
+    // let name = "Hà";
+    // if (input >= 75) {
+    //     alert("Bạn đã tốt nghiệp.");
+    //     name = "Hung";
+    //     alert("Chúc bạn thành công: " + name);
+    // } else { // <75
+    //     alert("bạn sẽ được chuyển lớp.");
+    // }
+
+    // input >=75 ? alert("Bạn đã tốt nghiệp.") : alert("bạn sẽ được chuyển lớp.");
+    input >=75
+        ? absent >= 50
+            ? alert("học lại vì nghỉ nhiều")
+            : alert("Bạn đã tốt nghiệp.")
+        : alert("bạn sẽ được chuyển lớp.");
+
+
+
+</script>
+</body>
+</html>

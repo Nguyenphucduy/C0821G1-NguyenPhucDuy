@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let array = [9,7,2,8];
+    let array1 = [3,5]
+
+    let array2 = ["a", "z", "c", "b"];
+
+
+    //Nối nhiều mảng
+    // array = array.concat(array1);
+    //
+    // for(let x of array){
+    //     document.write(x + " ");
+    // }
+
+    //thêm phần tử vào cuối mảng.
+    //array.push(10);
+
+    //thêm phần tử vào đầu mảng
+    //array.unshift(11);
+
+    //Xóa phần tử ở cuối
+    //array.pop();
+
+    //Xóa phần tử ở đầu
+    //array.shift();
+
+    // document.write("<br>");
+    // for(let x of array){
+    //     document.write(x + " ");
+    // }
+
+    //Chuyển mảng thành chuỗi
+    // let str = array.join("-");
+    // let str = array.toString();
+    // document.write(str);
+
+    //Hàm đảo mảng
+    // document.write(array.reverse());
+
+    //Hàm xóa tại vị trí index bất kì
+    // array.splice(2,2); Xóa từ index 2 đi 2 phần tử
+    // array.splice(1,1);
+    // for(let x of array){
+    //     document.write(x + " ");
+    // }
+
+    //Thêm tại vị trí index bất kì
+    // array.splice(2,0,11); //chèn tại index 2 số 11
+    //array.splice(2,0,11,12);
+    // array.splice(1,0,10);
+    // for(let x of array){
+    //     document.write(x + " ");
+    // }
+
+    //Hàm sắp xếp
+    array2.sort(function (a, b) {
+        return a - b;
+        // if(a > b) {
+        //     return 1;
+        // } else if (a < b){
+        //     return -1;
+        // } else {
+        //     return 0;
+        // }
+    })
+
+    for(let x of array2){
+        document.write(x + " ");
+    }
+
+</script>
+</body>
+</html>

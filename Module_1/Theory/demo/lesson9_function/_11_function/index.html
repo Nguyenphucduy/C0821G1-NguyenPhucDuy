@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>$Title$</title>
+</head>
+<body>
+<script>
+    // function sum(){
+    //   let a = parseInt(prompt("input a:"));
+    //   let b = parseInt(prompt("input b:"));
+    //   let c = a + b;
+    //   alert(c);
+    // }
+    // sum();
+    // sum();
+    // let d = parseInt(prompt("input d:"));
+    // let e = parseInt(prompt("input e:"));
+    // let c = d + e;
+    // alert(c);
+
+    // function sum(number1, number2) {
+    //     let result = number1 + number2;
+    //     document.write(result);
+    // }
+    //
+    // let a = parseInt(prompt("input a:")); //5 1
+    // let b = parseInt(prompt("input b:")); //6 2
+    // sum(a, b);
+
+    /*Hàm không có trả về*/
+    // function increase(x){
+    //     document.write(++x);
+    // }
+
+    /*Hàm có trả về*/
+    function increase(x){
+        document.write(++x);
+        return 11;
+        /*--- doan source sau khong dc chay vi co return o tren*/
+        document.write("Hello");
+        return x;
+    }
+
+    let a = increase(8);
+    console.log(a);
+
+</script>
+</body>
+</html>

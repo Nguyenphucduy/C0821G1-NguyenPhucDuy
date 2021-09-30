@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--    <button onclick="alert('Hello')">Click me</button>-->
+    <button onclick="showAlert()">Alert()</button>
+    <button onclick="showPrompt()">Prompt()</button>
+    <button onclick="showConfirm()">Confirm()</button>
+    <button onclick="showPrompt2()">Prompt2()</button>
+
+    <script>
+        // Hàm dùng để show thông tin đến người dùng.
+        function showAlert(){
+            alert('Hello cac ban');
+        }
+
+
+        function showPrompt(){
+            var name = prompt("Bạn tên gì ?")
+            alert("Bạn tên là: " + name);
+        }
+
+        function showConfirm(){
+            var check = confirm("Bạn có phải trên 18 tuổi ?");
+            alert(check);
+            if(check == true){
+                alert("Ban duoc phep truy cap.")
+            }
+        }
+
+        function showPrompt2(){
+            /*kết quả trả về của prompt() là chuỗi. */
+            // var number = prompt("Nhap tuoi cua bạn."); //"18"
+            // var number = parseInt(prompt("Nhap tuoi cua bạn."));
+            var number = prompt("Nhap tuoi cua bạn."); //"15.5"
+            alert(parseInt(number) + 1); //16
+            alert(parseFloat(number) + 1); //16.5
+        }
+    </script>
+
+    <script src="myJS.js"></script>
+<!--    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>-->
+</body>
+</html>

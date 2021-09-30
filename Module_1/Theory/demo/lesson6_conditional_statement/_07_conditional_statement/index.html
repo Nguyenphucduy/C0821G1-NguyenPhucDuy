@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let average = prompt("Input average: ");
+    let absent = prompt("Input absent percent: ")
+
+    if(average >= 9){
+        if(absent <= 50) {
+            document.write("Exellent.");
+        } else {
+            document.write("Good.");
+        }
+    } else if (average >= 7) {
+        document.write("Good.");
+    } else if (average >= 6) {
+        document.write("average.");
+    } else {
+        document.write("Below.");
+    }
+</script>
+</body>
+</html>

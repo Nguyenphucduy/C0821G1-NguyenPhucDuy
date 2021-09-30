@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let array2d = [
+        [1, 2, 3, 4], //0
+        [7, 8, 9, 10], //1
+        [11, 12, 13, 14],//2
+    ];
+    let array1d = ["1",2,true];
+    let array2d = [[1, 2, 3, 4],[7, 8, 9, 10],[11, 12, 13, 14]];
+
+    document.write(array2d[1][3]);
+    document.write(array2d[2][0]); //11
+    document.write(array2d[1][1]); //8
+    for(let row = 0; row < array2d.length; row++){
+        for(let col = 0; col < array2d[row].length; col++){
+            document.write(array2d[row][col] + " ");
+        }
+        document.write("<br>");
+    }
+
+    /*Tao mang 2d voi so hang, so cot nguoi dung nhap vao*/
+    let rowArr = parseInt(prompt("Input row:")) //3
+    let colArr = parseInt(prompt("Input col:")) //4
+
+    let arr2d = new Array(rowArr);
+    //arr2d = [Undefined, Undefined, Undefined];
+    for(let row = 0; row < arr2d.length; row++){
+        arr2d[row] = new Array(colArr);
+        //row = 0
+        /*
+        arr2d = [
+            [ Undefined,Undefined,Undefined,Undefined ], [0][0], [0][1]
+            Undefined,
+            Undefined,
+        ]
+         */
+        for(let col = 0; col < arr2d[row].length; col++){
+            let value = prompt("input at ["+row +"] ["+col+"]:"); //11
+            arr2d[row][col] = value;
+            //col = 0;
+            /*
+            arr2d = [
+                [11,Undefined,Undefined,Undefined],
+                Undefined,
+                Undefined,
+            ]
+             */
+        }
+    }
+
+
+    for(let row = 0; row < arr2d.length; row++){
+        for(let col = 0; col < arr2d[row].length; col++){
+            document.write(arr2d[row][col] + " ");
+        }
+        document.write("<br>");
+    }
+
+</script>
+</body>
+</html>

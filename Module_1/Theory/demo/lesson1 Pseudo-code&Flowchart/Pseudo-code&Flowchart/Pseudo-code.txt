@@ -1,0 +1,114 @@
+//Tính điểm trung bình: toán lý hóa
+
+BEGIN
+	INPUT math, physics, chemistry
+	average = (math + physics + chemistry)/3
+	DISPLAY average
+END
+
+//Xếp loại học viên từ điểm trung bình.
+giỏi điểm:  tb >= 9
+khá điểm: 9 > tb >= 7
+tb điểm: 7 > tb >= 6
+yếu: tb <6
+
+BEGIN
+	INPUT average
+	IF average >= 9
+		DISPLAY exellent
+	ELSE IF average >= 7
+		DISPLAY good
+	ELSE IF average >= 6
+		DISPLAY average
+	ELSE
+		DISPLAY below
+	END IF
+	-------------------
+	INPUT average
+	IF average <6
+		DISPLAY below
+	ELSE IF average < 7
+		DISPLAY average
+	ELSE IF average < 9
+		DISPLAY good
+	ELSE
+		DISPLAY exellent
+	END IF
+	---------------------
+	IF average >= 9
+		DISPLAY exellent
+	END IF
+	
+	IF average >= 7 AND average <9
+		DISPLAY good
+	END IF
+	
+	IF average >= 6 AND average < 7
+		DISPLAY average
+	END IF
+	
+	IF average <6
+		DISPLAY below
+	END IF
+END
+
+// Hiển thị các số từ 1 đến 10
+BEGIN
+	DISPLAY 1
+	DISPLAY 2
+	DISPLAY 3
+	DISPLAY 4
+	....
+	DISPLAY 10
+	---------
+	
+	count = 1
+	WHILE(count <=10)
+		DO 
+			DISPLAY count
+			count = count + 1
+		END DO
+END
+
+--
+IF
+	...
+ELSE
+	...
+-----------------
+1. if đơn
+IF
+	...
+END IF
+
+2. if đầy đủ
+IF
+	...
+ELSE
+	...
+END IF
+
+3. if lồng nhau
+IF
+	IF
+	...
+	END IF
+ELSE
+	IF
+	...
+	END IF
+END IF
+
+
+4. if bậc thang
+IF
+	...
+ELSE IF
+	....
+ELSE IF
+	....
+END IF
+
+
+
+

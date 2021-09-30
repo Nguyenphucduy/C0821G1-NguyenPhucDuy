@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    class Bird {
+        constructor(weight) {
+            this.weight = weight;
+        }
+
+        getWeight(){
+            return this.weight;
+        }
+    }
+
+    class Animal {
+        constructor(name, age) {
+            this.name = name;
+            this.age = age;
+        }
+
+        sayName(){
+            console.log("Animal name: " + this.name);
+        }
+
+        setName(newName){
+            this.name = newName;
+        }
+
+        getName(){
+            return this.name;
+        }
+
+        getAge(){
+            return this.age;
+        }
+
+        setAge(newAge){
+            this.age = newAge;
+        }
+    }
+
+    class Dog extends Animal {
+        constructor(name, age, color) {
+            super(name, age); //gọi lại constructor cha
+            this.color = color;
+        }
+
+        // sayName(){
+        //     console.log("Dog name: " + this.name);
+        // }
+        eat(bird){
+            if(bird.weight > 0){
+                bird.weight--;
+            } else {
+                console.log("Dog: Het do an roi co chu oi!.")
+            }
+        }
+    }
+
+    class Cat extends Animal {
+        constructor(name, age, color) {
+            super(name, age); //gọi lại constructor cha
+            this.color = color;
+        }
+
+        sayName(){
+            console.log("Meo meo");
+        }
+
+        eat(bird){
+            if(bird.weight > 0){
+                bird.weight--;
+            } else {
+                console.log("Meo: Het do an roi co chu oi!.")
+            }
+        }
+    }
+
+    //
+    // let myDog = new Dog("Vang","3","red");
+    // // myDog.name = "lala";
+    // // myDog.setName("Do");
+    // // myDog.getName();
+    // myDog.sayName();
+    //
+    // console.log(myDog.getName())
+
+    let bird = new Bird(1);
+    let myDog = new Dog("Tom", 3, "red");
+    let myCat = new Cat("Jerry", 3, "green");
+
+    myDog.eat(bird);
+    myCat.eat(bird);
+    console.log(bird.getWeight());
+
+</script>
+</body>
+</html>
